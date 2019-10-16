@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row>
-            <h3 clas="mess" id="h3m" >Hola querido Usuario</h3>
+            <h3 clas="mess" id="h3m" >Hola querido {{username}}</h3>
             <v-icon  large class="mess" >mdi-account-circle</v-icon>
             <v-btn 
             v-for="link in links"
@@ -21,6 +21,9 @@
 
 <script>
 export default {
+    props:{
+        username: String
+    },
     data: ()=>({
         links: [
             'Sign out'
@@ -28,7 +31,7 @@ export default {
     }),
     methods:{
         changeState(){
-            this.$emit('changeState','SignIn')
+            this.$store.commit('changeLogState')
         }
     }
 }

@@ -67,9 +67,11 @@ export default {
           */
           this.enableEmail = true
           this.enablePassword = true
-          this.changeState = 'User'
-          this.$emit('ChangeState','User')
-          window.location =  ('./');
+          this.$store.commit('changeLogState');
+          this.$store.commit('setUsername',this.emailInpt)
+          console.log("el valor del boolean es"+ this.$store.state.isLoged);
+          this.$router.push({ path: 'home' })
+          //window.location =  ('./');
       }
       else{
         alert("Complete los campos")
@@ -77,11 +79,11 @@ export default {
         this.enablePassword = this.passwordInpt.length > 2
       
       }
-       
-    },
-    changeStateNav(upd){
-      //console.log("llego aqui")
-      this.changeState = 'SignIn'
+    }
+  },
+  created(){
+    if(this.$store.state.isLoged){
+      this.$router.push({ path: 'home' })
     }
   }
 }

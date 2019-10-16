@@ -1,10 +1,8 @@
 <template>
   <v-app id="inspire">
-    <Navbar v-bind:componentStatus="statusBar" />
+    <Navbar/>
     <v-content>
-      <router-view 
-        v-on:ChangeState=ChangeNavBarToSignIn($upd) 
-      />
+      <router-view />
     </v-content>
     <Footer/>
   </v-app>
@@ -26,13 +24,10 @@
       statusBar: 'SignIn'
     }),
     methods:{
-      ChangeNavBarToSignIn(upd){
-        console.log("entro auqi");
-        this.statusBar = 'User'
-      }
     },
     created () {
       this.$vuetify.theme.dark = false
+      this
     },
   }
 </script>
