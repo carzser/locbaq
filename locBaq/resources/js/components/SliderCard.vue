@@ -3,13 +3,16 @@
         class="mx-auto"
         max-width="70%"
         max-height="20%"
+        color="rgb(0,0,0,0)"
     >
-    <v-slide-group class ="center" multiple show-arrows>
+    <v-slide-group class ="center" color="rgb(0,0,0,0)" multiple show-arrows>
       <v-slide-item
+        
         v-for="card in cards"
         :key="card.title"
         v-slot:default="{ active, toggle }"
-        style="padding-left: 5px"
+        style="padding-left: 10px"
+        color="rgb(0,0,0,0)"
       >
         <Card :cardInfo="card" />
       </v-slide-item>

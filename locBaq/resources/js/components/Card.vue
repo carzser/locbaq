@@ -4,6 +4,7 @@
         max-width="300"
         @click="getNamePress"
         dark:true
+        color="rgb(0,0,0,0.05)"
     >
         <v-img
             :src="cardInfo.src"
@@ -14,12 +15,12 @@
         >
             <v-card-title v-text="cardInfo.title"></v-card-title>
         </v-img>
-        <v-card-text>
+        <v-card-text class="black--text">
             <p> {{cardInfo.text}} </p>
 
         </v-card-text>
         <v-card-actions>
-            <v-spacer></v-spacer>
+            <v-spacer></v-spacer>"
 
             <v-btn icon>
             <v-icon>mdi-heart</v-icon>

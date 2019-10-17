@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app color = "primary" dark>
+    <v-app-bar app color = "rgb(229,57,53)" dark>
         <v-toolbar-title>Localización Barranquilla</v-toolbar-title>
         <!-- <v-btn>cambiar status</v-btn> -->
         <v-spacer></v-spacer>

@@ -1876,6 +1876,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Card',
   props: {
@@ -1952,6 +1953,32 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Card_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Card.vue */ "./resources/js/components/Card.vue");
 /* harmony import */ var _SliderCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SliderCard */ "./resources/js/components/SliderCard.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2137,6 +2164,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Card_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Card.vue */ "./resources/js/components/Card.vue");
+//
+//
+//
 //
 //
 //
@@ -2587,7 +2617,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.imgBack[data-v-f2b6376c]{\n  height:700px;\n  width:100%;\n  background: url('https://live.staticflickr.com/1787/29206803358_8e8a13ea5f_b.jpg');\n  background-size:100%;\n}\n\n", ""]);
+exports.push([module.i, "\n.imgBack[data-v-f2b6376c]{\n  height:700px;\n  width:100%;\n  background: url('https://live.staticflickr.com/1787/29206803358_8e8a13ea5f_b.jpg');\n  background-size:100%;\n  padding-left: 3%;\n}\n.textup[data-v-f2b6376c]{\n  padding-top: 10%;\n  font-size: 35px;\n  color: white;\n}\n.textup h4[data-v-f2b6376c] {\n  font-size: 20px;\n  margin-bottom: 3px;\n}\n.inpt[data-v-f2b6376c]{\n  font-size:35px;\n}\n\n", ""]);
 
 // exports
 
@@ -20894,7 +20924,7 @@ var render = function() {
     "v-card",
     {
       staticClass: "mx-auto",
-      attrs: { "max-width": "300", "dark:true": "" },
+      attrs: { "max-width": "300", "dark:true": "", color: "rgb(0,0,0,0.05)" },
       on: { click: _vm.getNamePress }
     },
     [
@@ -20916,7 +20946,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("v-card-text", [
+      _c("v-card-text", { staticClass: "black--text" }, [
         _c("p", [_vm._v(" " + _vm._s(_vm.cardInfo.text) + " ")])
       ]),
       _vm._v(" "),
@@ -20924,7 +20954,7 @@ var render = function() {
         "v-card-actions",
         [
           _c("v-spacer"),
-          _vm._v(" "),
+          _vm._v('"\n\n        '),
           _c(
             "v-btn",
             { attrs: { icon: "" } },
@@ -20976,7 +21006,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-footer",
-    { attrs: { color: "primary lighten-1", padless: "" } },
+    { attrs: { color: "rgb(229,57,53)", padless: "" } },
     [
       _c(
         "v-row",
@@ -20997,7 +21027,8 @@ var render = function() {
           _c(
             "v-col",
             {
-              staticClass: "primary lighten-2 py-4 text-center white--text",
+              staticClass:
+                "rgb(229,57,53) lighten-2 py-4 text-center white--text",
               attrs: { cols: "12" }
             },
             [
@@ -21036,31 +21067,52 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-app",
-    { attrs: { fluid: "", "fill-height": "" } },
+    { staticClass: "grey lighten-3", attrs: { fluid: "", "fill-height": "" } },
     [
       _c(
         "v-row",
+        { attrs: { justify: "start" } },
         [
           _c("v-col", [
-            _c("div", { staticClass: "imgBack" }, [
-              _c("h1", [_vm._v("hla mundo")])
-            ])
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        [
-          _c("v-col", { attrs: { justify: "start" } }, [
             _c(
               "div",
-              { staticClass: "sliders mt-5" },
+              { staticClass: "imgBack" },
               [
-                _c("h1", [_vm._v("Restaurantes favoritos")]),
+                _c("div", { staticClass: "textup" }, [
+                  _c("h2", [_vm._v("Restaurantes en")]),
+                  _vm._v(" "),
+                  _c("h2", [_vm._v("Barranquilla, Colombia")]),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v("Directorio y Guía a la mejor comida")])
+                ]),
                 _vm._v(" "),
-                _c("SliderCard")
+                _c("v-text-field", {
+                  staticClass: "inpt white--text",
+                  staticStyle: { width: "50%" },
+                  attrs: {
+                    "append-icon": "search",
+                    filled: "",
+                    "background-color": "rgb(0, 0, 0, 0.5)",
+                    color: "white",
+                    dark: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "v-btn",
+                  { attrs: { color: "rgb(229,57,53)", dark: "" } },
+                  [
+                    _c("v-icon", { attrs: { left: "", dark: "" } }, [
+                      _vm._v("mdi-map-marker")
+                    ]),
+                    _vm._v("\n        Mostrar Restaurantes cerca de ti")
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("v-btn", { attrs: { color: "rgb(229,57,53)", dark: "" } }, [
+                  _vm._v("Mirar el catalogo")
+                ])
               ],
               1
             )
@@ -21072,12 +21124,29 @@ var render = function() {
       _c(
         "v-row",
         [
+          _c(
+            "v-col",
+            { staticClass: "mt-5 md-5" },
+            [
+              _c("h3", [_vm._v("Restaurantes favoritos")]),
+              _vm._v(" "),
+              _c("SliderCard")
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-row",
+        [
           _c("v-col", [
             _c(
               "div",
               { staticClass: "sliders mt-5" },
               [
-                _c("h1", [_vm._v("Restaurantes más visitados")]),
+                _c("h3", [_vm._v("Restaurantes más visitados")]),
                 _vm._v(" "),
                 _c("SliderCard")
               ],
@@ -21150,7 +21219,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-app-bar",
-    { attrs: { app: "", color: "primary", dark: "" } },
+    { attrs: { app: "", color: "rgb(229,57,53)", dark: "" } },
     [
       _c("v-toolbar-title", [_vm._v("Localización Barranquilla")]),
       _vm._v(" "),
@@ -21224,16 +21293,20 @@ var render = function() {
     "v-sheet",
     {
       staticClass: "mx-auto",
-      attrs: { "max-width": "70%", "max-height": "20%" }
+      attrs: { "max-width": "70%", "max-height": "20%", color: "rgb(0,0,0,0)" }
     },
     [
       _c(
         "v-slide-group",
-        { staticClass: "center", attrs: { multiple: "", "show-arrows": "" } },
+        {
+          staticClass: "center",
+          attrs: { color: "rgb(0,0,0,0)", multiple: "", "show-arrows": "" }
+        },
         _vm._l(_vm.cards, function(card) {
           return _c("v-slide-item", {
             key: card.title,
-            staticStyle: { "padding-left": "5px" },
+            staticStyle: { "padding-left": "10px" },
+            attrs: { color: "rgb(0,0,0,0)" },
             scopedSlots: _vm._u(
               [
                 {
