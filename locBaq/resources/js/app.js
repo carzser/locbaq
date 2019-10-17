@@ -1,19 +1,22 @@
 require('./bootstrap');
 import Vue from 'vue'
-window.Vue = require('vue');
-import Vuetify from 'vuetify'
-import MainApp from './components/MainApp.vue';
-import VueRouter from 'vue-router'
-import {routes} from './routes'
 import Vuex from 'vuex'
+import VueRouter from 'vue-router'
+import Vuetify from 'vuetify'
+
+import App from '@/js/views/App'
+import MainApp from './components/MainApp.vue';
+import {routes} from './routes'
+//window.Vue = require('vue');
 
 Vue.use(Vuetify);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
+console.log("llegaaqui");
 const router = new VueRouter({
-    routes,
-    mode: 'history'
+    mode: 'history',
+    routes
 })
 
 export const store = new Vuex.Store({
@@ -41,13 +44,11 @@ export const store = new Vuex.Store({
     }
 
 })
-
+console.log("llega");
 const app = new Vue({
     el:'#app',
     router,
     vuetify : new Vuetify(),
     store: store,
-    components: {
-        MainApp
-    }
+    render: h=> h(App),
 });
