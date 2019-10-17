@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
     <Navbar/>
     <v-content>
         <router-view />

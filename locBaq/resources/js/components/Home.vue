@@ -1,49 +1,38 @@
 <template>
-  <v-app class="fill-height" fluid>
-    <v-sheet
-    class="mx-auto center"
-    max-width="80%"
-  >
-    <v-slide-group class ="center" multiple show-arrows>
-      <v-slide-item
-        v-for="card in cards"
-        :key="card.title"
-        v-slot:default="{ active, toggle }"
-        style="padding-left: 5px"
-      >
-        <Card :cardInfo="card" />
-      </v-slide-item>
-    </v-slide-group>
-  </v-sheet>
-    <!-- <v-carousel>
-      <v-carousel-item
-      v-for="card in cards"
-      :key="card.title"
-      >
-      <Card :cardInfo="card"></Card>
-      </v-carousel-item>
-    </v-carousel>
-       -->
-      
-      <!-- <v-container fluid>
-        <v-row dense>
-          <v-col
-            v-for="card in cards"
-            :key="card.title"
-            cols="4"
-          >
-          <Card v-bind:cardInfo="card"/>
-          </v-col>
-         </v-row>
-      </v-container> -->
+  <v-app fluid fill-height>
+    <v-row>
+      <v-col> 
+        <div class="imgBack">
+          <h1>hla mundo</h1>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col justify="start">
+        <div class="sliders mt-5">
+          <h1>Restaurantes favoritos</h1>
+          <SliderCard/>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <div class="sliders mt-5">
+          <h1>Restaurantes más visitados</h1>
+          <SliderCard/>
+        </div>
+      </v-col>
+    </v-row>
   </v-app>
 </template>
 
 <script>
 import Card from './Card.vue'
+import SliderCard from './SliderCard'
+
 export default {
     components:{
-        Card
+        Card,SliderCard
     },
     data () {
       return {
@@ -54,87 +43,18 @@ export default {
           'red',
           'orange',
         ],
-        cards: [
-        { 
-            title: 'Porthos', 
-            src: 'https://restaurante.guide/wp-content/uploads/2019/07/Porthos-logo.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        },
-        {
-            title: 'Mac-Donalds', 
-            src: 'https://media.wired.com/photos/5c99118735d3fb65db9a333d/master/w_2560%2Cc_limit/McDonalds-TA-462767668.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-
-        },
-        {
-            title: 'Big Bites', 
-            src: 'https://d1jgln4w9al398.cloudfront.net/imagens/ce/logosgde/201808011600_01da0f38-6e58-481f-9c61-f6783257e4dc.png',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-
-        },
-        {
-            title: 'Otro rest', 
-            src: 'https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-
-        },
-        {
-            title: 'Más restaurantes', 
-            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        },
-        {
-            title: 'Más restaurantes2', 
-            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        },
-        {
-            title: 'Más restaurantes3', 
-            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        },
-        {
-            title: 'Más restaurantes4', 
-            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        },
-        {
-            title: 'Más restaurantes5', 
-            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        },
-        {
-            title: 'Más restaurantes6', 
-            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        },
-        {
-            title: 'Más restaurantes7', 
-            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        },
-        {
-            title: 'Más restaurantes8', 
-            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-            flex: 6,
-            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-        }
-
-        ]
-      }
+      }   
     }
-
-
 }
 </script>
+
+<style scoped>
+  .imgBack{
+    height:700px;
+    width:100%;
+    background: url('https://live.staticflickr.com/1787/29206803358_8e8a13ea5f_b.jpg');
+    background-size:100%;
+    
+  }
+
+</style>
