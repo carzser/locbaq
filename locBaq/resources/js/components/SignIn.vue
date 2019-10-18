@@ -6,6 +6,7 @@
         text
         rounded
         :to="link"
+        class="font-weight-bold"
         >{{link}}
         </v-btn>
 

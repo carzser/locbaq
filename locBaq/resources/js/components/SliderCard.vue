@@ -5,7 +5,7 @@
         max-height="20%"
         color="rgb(0,0,0,0)"
     >
-    <v-slide-group class ="center" color="rgb(0,0,0,0)" multiple show-arrows>
+    <v-slide-group class ="left" color="rgb(0,0,0,0)" multiple show-arrows>
       <v-slide-item
         
         v-for="card in cards"

@@ -9,7 +9,7 @@
             text
             rounded
             @click="changeState"
-            class="mess"
+            class="mess font-weight-bold"
             >{{link}}
             </v-btn>
 

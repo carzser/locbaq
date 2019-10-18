@@ -10,7 +10,7 @@
             :src="cardInfo.src"
             class="white--text align-end"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            height="200px"
+            height="170px"
             
         >
             <v-card-title v-text="cardInfo.title"></v-card-title>
@@ -20,7 +20,7 @@
 
         </v-card-text>
         <v-card-actions>
-            <v-spacer></v-spacer>"
+            <v-spacer></v-spacer>
 
             <v-btn icon>
             <v-icon>mdi-heart</v-icon>

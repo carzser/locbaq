@@ -1,6 +1,7 @@
 <template>
     <v-app-bar app color = "rgb(229,57,53)" dark>
-        <v-toolbar-title>Localización Barranquilla</v-toolbar-title>
+        <v-btn text class="mr-5"><v-icon>mdi-silverware-fork-knife</v-icon></v-btn>
+        <v-toolbar-title class="font-weight-black "> Localización Barranquilla</v-toolbar-title>
         <!-- <v-btn>cambiar status</v-btn> -->
         <v-spacer></v-spacer>
         <component v-bind:is="componentStatus" v-bind:username="getUserName"></component>

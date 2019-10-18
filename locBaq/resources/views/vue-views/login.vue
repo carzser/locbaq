@@ -3,7 +3,7 @@
     <v-content class="fill-height" fluid>
       <v-card width="35%" class="mx-auto mt-5 center">
         <v-card-title>
-          <h1 class= "display-1">Login</h1>
+          <h1 class= "font-weight-bold display-1 " >Login</h1>
         </v-card-title>
         <v-card-text>
           <v-form>
@@ -26,9 +26,9 @@
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
-          <v-btn color = "info" :to="'Register'">Register</v-btn>  
+          <v-btn class="font-weight-bold" color = "info" :to="'Register'">Register</v-btn>  
           <v-spacer></v-spacer>
-          <v-btn color = "success" @click="isValid">Login</v-btn>
+          <v-btn class="font-weight-bold" color = "success" @click="isValid">Login</v-btn>
         </v-card-actions>
       </v-card>
     </v-content>

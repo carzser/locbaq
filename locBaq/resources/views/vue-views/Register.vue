@@ -3,7 +3,7 @@
         <v-content app class="fill-height" fluid>
             <v-card width = "35%" class="mx-auto mt-5 center">
                 <v-card-title class ="text-center">
-                    <h1 class = "display-1 text-center" >Registro</h1>
+                    <h1 class = "display-1 text-center font-weight-bold" >Registro</h1>
                 </v-card-title>
                 <v-card-text>
                     <v-form>
@@ -55,13 +55,23 @@
                             v-on:input = "validPassword2"
                             :error = "!enablePassword2" 
                         />
+                        <v-combobox
+                            v-model="select"
+                            :items="items"
+                            :error="!enableCombo"
+                            
+                            prepend-icon="mdi-store"
+                            label="¿Posee un restaurante?"
+                        ></v-combobox>
+                    
+
                     </v-form>
                 </v-card-text>
                 <v-divider></v-divider>
                 <v-card-actions>
-                    <v-btn color = "info" :to="'Home'">Atrás</v-btn>  
+                    <v-btn class="font-weight-bold" color = "info" :to="'Home'">Atrás</v-btn>  
                     <v-spacer></v-spacer>
-                    <v-btn color = "success" @click="validAll">Registrarse</v-btn>
+                    <v-btn class="font-weight-bold" color = "success" @click="validAll">Registrarse</v-btn>
                 </v-card-actions>
             </v-card>
             
@@ -87,16 +97,21 @@ export default {
       enableEmail:true,
       enablePassword: true,
       enablePassword2: true,
+      enableCombo: true,
       nameInpt: '',
       lastNameInpt: '',
       cellphoneInpt: '',
       emailInpt: '',
       passwordInpt: '',
       password2Inpt: '',
+      select: '',
       links: [
           'Home',
           'Login',
           'Register'
+      ],
+      items:[
+          'Si','No'
       ]
   }),
   methods: {
@@ -123,16 +138,19 @@ export default {
       validPassword2(){
           this.enablePassword2 = (this.passwordInpt == this.password2Inpt)
       },
+      validComboBox(){
+          this.enableCombo = !(this.select == "")
+      },
       validAll(){
           this.validName()
           this.validLastName()
           this.validPhone()
-          
           this.validEmail()
           this.validPassword()
           this.validPassword2()
+          this.validComboBox()
           if(this.enableName && this.enableLastName && this.enablePhone && 
-          this.enableEmail && this.enablePassword && this.enablePassword2){
+          this.enableEmail && this.enablePassword && this.enablePassword2 && this.enableCombo){
               /*var text = {
                   "Name" : this.nameInpt,
                   "LastName" : this.lastNameInpt,

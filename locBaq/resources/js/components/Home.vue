@@ -13,37 +13,39 @@
             append-icon ="search"
             filled
             background-color="rgb(0, 0, 0, 0.5)"
-            style="width:50%"
+            style="width:44%"
             color="white"
             dark
             class="inpt white--text"
           ></v-text-field>
           <v-btn
-            
+            class="d-block mb-3 font-weight-bold"
             color="rgb(229,57,53)"
             dark
+            
           >
           <v-icon left dark>mdi-map-marker</v-icon>
           Mostrar Restaurantes cerca de ti</v-btn>
           <v-btn
             color="rgb(229,57,53)"
             dark 
+            class="d-block font-weight-bold"
           >Mirar el catalogo</v-btn>
           
         </div>
       </v-col>
     </v-row>
     <v-row >
-      <v-col class="mt-5 md-5" >
+      <v-col class="mt-5 mb-8" >
         
-          <h3>Restaurantes favoritos</h3>
+          <h3 class="font-weight-black">Restaurantes favoritos</h3>
           <SliderCard/>
         
       </v-col>
     </v-row>
     <v-row>
       <v-col>
-        <div class="sliders mt-5">
+        <div class="sliders mt-8">
           <h3>Restaurantes más visitados</h3>
           <SliderCard/>
         </div>
@@ -87,7 +89,12 @@ export default {
     padding-top: 10%;
     font-size: 35px;
     color: white;
+    background-color: rgba(0, 0, 0, 0.4)
   }
+  h3 {
+    font-family: sans-serif;
+  }
+
   .textup h4 {
     font-size: 20px;
     margin-bottom: 3px;

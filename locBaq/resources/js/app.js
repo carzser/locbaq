@@ -23,7 +23,8 @@ export const store = new Vuex.Store({
     state: {
         isLoged: false,
         stateNavbar: 'SignIn',
-        username: ""
+        username: "",
+        isOwner: true
     },
     mutations:{
         changeLogState(data){
