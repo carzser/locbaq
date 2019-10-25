@@ -2,6 +2,7 @@ import login from '../views/vue-views/login.vue'
 import register from '../views/vue-views/Register.vue'
 import home from './components/Home.vue'
 import createRest from '../views/vue-views/createRest.vue'
+import perfil from './components/Perfil.vue'
 export const routes = [
     {
         path: '/',
@@ -26,5 +27,9 @@ export const routes = [
     {
         path: '/createrest',
         component: createRest
+    },
+    {
+        path: '/myprofile',
+        component: perfil
     }
 ]

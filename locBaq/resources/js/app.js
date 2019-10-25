@@ -3,6 +3,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import Vuetify from 'vuetify'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 import App from '@/js/views/App'
 import MainApp from './components/MainApp.vue';
@@ -12,8 +14,8 @@ import {routes} from './routes'
 Vue.use(Vuetify);
 Vue.use(VueRouter);
 Vue.use(Vuex);
-
-console.log("llegaaqui");
+Vue.use(VueAxios, axios);
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 const router = new VueRouter({
     mode: 'history',
     routes
@@ -45,7 +47,6 @@ export const store = new Vuex.Store({
     }
 
 })
-console.log("llega");
 const app = new Vue({
     el:'#app',
     router,

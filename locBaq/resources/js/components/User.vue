@@ -2,7 +2,7 @@
     <div>
         <v-row>
             <h3 clas="mess" id="h3m" >Hola querido {{username}}</h3>
-            <v-icon  large class="mess" >mdi-account-circle</v-icon>
+            <v-icon :to="myprofile" large class="mess" >mdi-account-circle</v-icon>
             <v-btn 
             v-for="link in links"
             :key ="link"
