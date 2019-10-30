@@ -8,32 +8,7 @@
           :cols="card.flex"
           class="mb-3"
         >
-          <v-card>
-            <v-img
-              :src="card.src"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title v-text="card.title"></v-card-title>
-            </v-img>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
+        <Card :cardInfo = "card" />
         </v-col>
     </v-row>
     <v-pagination
@@ -44,76 +19,230 @@
 </template>
 
 <script>
+import Card from './Card.vue'
 export default {
+    components:{
+      Card
+    },
     data: () => ({
       cards: [
-        { title: 'Pre-fab homes1', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines2', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines3', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines4', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines5', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines6', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines7', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines8', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines9', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines10', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines11', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines12', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines13', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines14', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines15', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines16', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines17', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines18', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines19', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 3 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 3 },
+        { 
+            title: 'Porthos', 
+            src: 'https://restaurante.guide/wp-content/uploads/2019/07/Porthos-logo.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Mac-Donalds', 
+            src: 'https://media.wired.com/photos/5c99118735d3fb65db9a333d/master/w_2560%2Cc_limit/McDonalds-TA-462767668.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+
+        },
+        {
+            title: 'Big Bites', 
+            src: 'https://d1jgln4w9al398.cloudfront.net/imagens/ce/logosgde/201808011600_01da0f38-6e58-481f-9c61-f6783257e4dc.png',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+
+        },
+        {
+            title: 'Otro rest', 
+            src: 'https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+
+        },
+        {
+            title: 'Más restaurantes', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes2', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes3', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes4', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes5', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes6', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes7', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes8', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes9', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes10', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes11', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes12', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes13', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes14', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes15', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes16', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes17', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes18', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes19', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes20', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes21', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes22', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes23', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes24', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes25', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes26', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes27', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes28', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes29', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes30', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes31', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        }
       ],
       page: 1,
-      
-
     }),
     computed:{
-        
         tcards : function (){
             var v = this.cards.slice(12*(this.page-1),12*(this.page-1)+12)
             console.log(v)

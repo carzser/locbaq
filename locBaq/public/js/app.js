@@ -2093,6 +2093,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2103,7 +2139,18 @@ __webpack_require__.r(__webpack_exports__);
   props: {},
   data: function data() {
     return {
-      links: ['Home', 'Register', 'Login']
+      links: ['Home', 'Register', 'Login'],
+      items: [{
+        name: 'item1'
+      }, {
+        name: 'item2'
+      }, {
+        name: 'item3'
+      }, {
+        name: 'item4'
+      }, {
+        name: 'item5'
+      }]
     };
   },
   computed: {
@@ -2544,6 +2591,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Card_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Card.vue */ "./resources/js/components/Card.vue");
 //
 //
 //
@@ -2564,274 +2612,188 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Card: _Card_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       cards: [{
-        title: 'Pre-fab homes1',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Porthos',
+        src: 'https://restaurante.guide/wp-content/uploads/2019/07/Porthos-logo.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Mac-Donalds',
+        src: 'https://media.wired.com/photos/5c99118735d3fb65db9a333d/master/w_2560%2Cc_limit/McDonalds-TA-462767668.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines2',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Big Bites',
+        src: 'https://d1jgln4w9al398.cloudfront.net/imagens/ce/logosgde/201808011600_01da0f38-6e58-481f-9c61-f6783257e4dc.png',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Otro rest',
+        src: 'https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines3',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes2',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes3',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes4',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines4',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes5',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes6',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes7',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines5',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes8',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes9',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes10',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines6',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes11',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes12',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes13',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines7',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes14',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes15',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes16',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines8',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes17',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes18',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes19',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines9',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes20',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes21',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes22',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines10',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes23',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes24',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes25',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines11',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes26',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes27',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
+        title: 'Más restaurantes28',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Best airlines12',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes29',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
+        title: 'Más restaurantes30',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines13',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
-      }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
-      }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines14',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
-      }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
-      }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines15',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
-      }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
-      }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines16',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
-      }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
-      }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines17',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
-      }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
-      }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines18',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
-      }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
-      }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines19',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
-      }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
-      }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
-      }, {
-        title: 'Pre-fab homes',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        flex: 3
-      }, {
-        title: 'Favorite road trips',
-        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        flex: 3
-      }, {
-        title: 'Best airlines',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        flex: 3
+        title: 'Más restaurantes31',
+        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+        flex: 3,
+        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
       }],
       page: 1
     };
@@ -22194,6 +22156,81 @@ var render = function() {
       _vm._v(" "),
       _c("v-spacer"),
       _vm._v(" "),
+      _c(
+        "v-menu",
+        {
+          attrs: { bottom: "", left: "", "offset-y": "" },
+          scopedSlots: _vm._u([
+            {
+              key: "activator",
+              fn: function(ref) {
+                var on = ref.on
+                return [
+                  _c(
+                    "v-btn",
+                    _vm._g({ attrs: { icon: "" } }, on),
+                    [_c("v-icon", [_vm._v("mdi-cart-outline")])],
+                    1
+                  )
+                ]
+              }
+            }
+          ])
+        },
+        [
+          _vm._v(" "),
+          _c(
+            "v-list",
+            _vm._l(_vm.items, function(item, i) {
+              return _c(
+                "v-card",
+                {
+                  key: i,
+                  staticClass: "mx-auto mt-2 ml-2 mr-2",
+                  attrs: { width: "300" }
+                },
+                [
+                  _c("h3", { staticClass: "pl-5" }, [
+                    _vm._v(_vm._s(item.name))
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          staticClass: "mx-2",
+                          attrs: { "x-small": "", fab: "" }
+                        },
+                        [_c("v-icon", [_vm._v("mdi-minus")])],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("h3", [_vm._v("0")]),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          staticClass: "mx-2",
+                          attrs: { "x-small": "", fab: "" }
+                        },
+                        [_c("v-icon", [_vm._v("mdi-plus")])],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            }),
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
       _c(_vm.componentStatus, {
         tag: "component",
         attrs: { username: _vm.getUserName }
@@ -22226,11 +22263,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-content",
-    { staticClass: "mt-auto left" },
+    { staticClass: "mt-auto" },
     [
       _c(
         "v-card",
-        { staticClass: "ml-10 mt-5 mb-5 px-5", attrs: { width: "50%" } },
+        {
+          staticClass: "mx-auto ml-10 mt-5 mb-5 px-5",
+          attrs: { width: "50%" }
+        },
         [
           _c("v-card-title", { staticClass: "mx-auto" }, [
             _c("h2", [_vm._v("Mi perfil")])
@@ -22238,6 +22278,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-row",
+            { staticClass: "mx-auto" },
             [
               _c(
                 "v-col",
@@ -22835,60 +22876,7 @@ var render = function() {
               staticClass: "mb-3",
               attrs: { cols: card.flex }
             },
-            [
-              _c(
-                "v-card",
-                [
-                  _c(
-                    "v-img",
-                    {
-                      staticClass: "white--text align-end",
-                      attrs: {
-                        src: card.src,
-                        gradient: "to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)",
-                        height: "200px"
-                      }
-                    },
-                    [
-                      _c("v-card-title", {
-                        domProps: { textContent: _vm._s(card.title) }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        { attrs: { icon: "" } },
-                        [_c("v-icon", [_vm._v("mdi-heart")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        { attrs: { icon: "" } },
-                        [_c("v-icon", [_vm._v("mdi-bookmark")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        { attrs: { icon: "" } },
-                        [_c("v-icon", [_vm._v("mdi-share-variant")])],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
+            [_c("Card", { attrs: { cardInfo: card } })],
             1
           )
         }),
@@ -78324,8 +78312,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

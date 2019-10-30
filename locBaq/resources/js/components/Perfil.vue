@@ -1,10 +1,10 @@
 <template>
-  <v-content class="mt-auto left">
-    <v-card width="50%" class="ml-10 mt-5 mb-5 px-5">
+  <v-content class="mt-auto">
+    <v-card width="50%" class="mx-auto ml-10 mt-5 mb-5 px-5">
       <v-card-title class="mx-auto">
         <h2>Mi perfil</h2>
       </v-card-title>
-      <v-row>
+      <v-row class="mx-auto">
         <v-col cols="12" sm="6">
           <v-text-field label="Nombre" v-model.trim:value="nameInpt" :readonly="readonly"></v-text-field>
 
