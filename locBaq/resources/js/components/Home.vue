@@ -4,8 +4,8 @@
       <v-col> 
         <div class="imgBack">
           <div class="textup">
-            <h2>Restaurantes en</h2>
-            <h2>Barranquilla, Colombia</h2>
+            <h2 style="color:white">Restaurantes en</h2>
+            <h2 style="color:white">Barranquilla, Colombia</h2>
             <h4>Directorio y Guía a la mejor comida</h4>
               
           </div>

@@ -3,6 +3,10 @@ import register from '../views/vue-views/Register.vue'
 import home from './components/Home.vue'
 import createRest from '../views/vue-views/createRest.vue'
 import perfil from './components/Perfil.vue'
+import reserva from './components/ReservaCard.vue'
+import Restaurant from './components/Restaurants.vue'
+
+
 export const routes = [
     {
         path: '/',
@@ -31,5 +35,13 @@ export const routes = [
     {
         path: '/myprofile',
         component: perfil
+    },
+    {
+        path: '/reserva',
+        component: reserva
+    },
+    {
+        path: '/restaurants',
+        component: Restaurant
     }
 ]

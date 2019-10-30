@@ -1,6 +1,6 @@
 <template>
     <v-sheet
-        class="mx-auto"
+        class="mb-10 mt-10"
         max-width="70%"
         max-height="20%"
         color="rgb(0,0,0,0)"
