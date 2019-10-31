@@ -2155,6 +2155,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -22211,6 +22234,8 @@ var render = function() {
         "v-menu",
         {
           attrs: {
+            "max-height": "400",
+            "scroll-y": "",
             bottom: "",
             left: "",
             "offset-y": "",
@@ -22238,12 +22263,23 @@ var render = function() {
           _c(
             "v-list",
             [
+              _c(
+                "h3",
+                {
+                  staticStyle: {
+                    "text-align": "center",
+                    color: "rgb(229,57,53)"
+                  }
+                },
+                [_vm._v("Lista de compra")]
+              ),
+              _vm._v(" "),
               _vm._l(_vm.getItems, function(item, i) {
                 return _c(
                   "v-card",
                   {
                     key: i,
-                    staticClass: "mx-auto mt-2 ml-7 mr-6",
+                    staticClass: "mx-auto mt-2 ml-3 mr-6",
                     attrs: { width: "300", height: "70" }
                   },
                   [
@@ -22257,13 +22293,21 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "v-card-actions",
-                          { staticClass: "justify-end d-inline-block ml-12" },
+                          {
+                            staticClass: "justify-end d-inline-block",
+                            staticStyle: { "margin-left": "120px" }
+                          },
                           [
                             _c(
                               "v-btn",
                               {
                                 staticClass: "mx-2 d-inline-block",
-                                attrs: { "x-small": "", fab: "" },
+                                attrs: {
+                                  "x-small": "",
+                                  fab: "",
+                                  color: "rgb(229,57,53)",
+                                  dark: ""
+                                },
                                 on: {
                                   click: function($event) {
                                     return _vm.subProduct(item.name)
@@ -22282,21 +22326,19 @@ var render = function() {
                               "v-btn",
                               {
                                 staticClass: "mx-2 d-inline-block",
-                                attrs: { "x-small": "", fab: "" }
+                                attrs: {
+                                  "x-small": "",
+                                  color: "rgb(229,57,53)",
+                                  dark: "",
+                                  fab: ""
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.addProduct(item.name)
+                                  }
+                                }
                               },
-                              [
-                                _c(
-                                  "v-icon",
-                                  {
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.addProduct(item.name)
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("mdi-plus")]
-                                )
-                              ],
+                              [_c("v-icon", [_vm._v("mdi-plus")])],
                               1
                             )
                           ],
@@ -22312,7 +22354,13 @@ var render = function() {
               _c(
                 "v-btn",
                 {
-                  staticClass: "mt-3 mr-3",
+                  staticClass: "mt-3 ml-3 mr-2",
+                  attrs: {
+                    small: "",
+                    color: "rgb(229,57,53)",
+                    dark: "",
+                    rounded: ""
+                  },
                   on: {
                     click: function($event) {
                       $event.stopPropagation()
@@ -22339,9 +22387,11 @@ var render = function() {
                   _c(
                     "v-card",
                     [
-                      _c("v-card-title", { staticClass: "headline" }, [
-                        _vm._v("Limpiar carrito")
-                      ]),
+                      _c(
+                        "v-card-title",
+                        { staticClass: "headline text-center" },
+                        [_vm._v("Limpiar carrito")]
+                      ),
                       _vm._v(" "),
                       _c("v-card-text", [
                         _vm._v(
@@ -22405,7 +22455,17 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-btn",
-                { staticClass: "mt-3 mr-3", on: { click: _vm.nextShop } },
+                {
+                  staticClass: "mt-3 mr-3",
+                  attrs: {
+                    small: "",
+                    color: "rgb(229,57,53)",
+                    dark: "",
+                    rounded: "",
+                    to: "reservation_process"
+                  },
+                  on: { click: _vm.nextShop }
+                },
                 [_vm._v("Continuar")]
               )
             ],
@@ -77957,6 +78017,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ReservationProcess.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/ReservationProcess.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/components/ReservationProcess.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Restaurants.vue":
 /*!*************************************************!*\
   !*** ./resources/js/components/Restaurants.vue ***!
@@ -78268,6 +78360,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Perfil_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Perfil.vue */ "./resources/js/components/Perfil.vue");
 /* harmony import */ var _components_ReservaCard_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ReservaCard.vue */ "./resources/js/components/ReservaCard.vue");
 /* harmony import */ var _components_Restaurants_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Restaurants.vue */ "./resources/js/components/Restaurants.vue");
+/* harmony import */ var _components_ReservationProcess_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ReservationProcess.vue */ "./resources/js/components/ReservationProcess.vue");
+
 
 
 
@@ -78302,6 +78396,9 @@ var routes = [{
 }, {
   path: '/restaurants',
   component: _components_Restaurants_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+}, {
+  path: '/realizar_pedido',
+  component: _components_ReservationProcess_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
 }];
 
 /***/ }),

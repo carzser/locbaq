@@ -6,7 +6,7 @@
     <v-toolbar-title class="font-weight-black">Localización Barranquilla</v-toolbar-title>
     <!-- <v-btn>cambiar status</v-btn> -->
     <v-spacer></v-spacer>
-    <v-menu bottom left offset-y :close-on-content-click="false">
+    <v-menu max-height="400" scroll-y bottom left offset-y :close-on-content-click="false">
       <template v-slot:activator="{ on }">
         <v-btn icon v-on="on">
           <v-icon>mdi-cart-outline</v-icon>
@@ -14,32 +14,48 @@
       </template>
 
       <v-list>
+        <h3 style="text-align:center; color: rgb(229,57,53)">Lista de compra</h3>
         <v-card
           v-for="(item,i) in getItems"
           :key="i"
-          class="mx-auto mt-2 ml-7 mr-6"
+          class="mx-auto mt-2 ml-3 mr-6"
           width="300"
           height="70"
+          
         >
           <div class="d-inline-block">
             <h3 class="pl-5 pt-5 d-inline-block">{{item.name}}</h3>
 
-            <v-card-actions class="justify-end d-inline-block ml-12">
-              <v-btn x-small class="mx-2 d-inline-block" @click="subProduct(item.name)" fab>
+            <v-card-actions class="justify-end d-inline-block" style="margin-left:120px">
+              <v-btn 
+                x-small 
+                class="mx-2 d-inline-block" 
+                @click="subProduct(item.name)" 
+                fab
+                color="rgb(229,57,53)"
+                dark
+                >
                 <v-icon>mdi-minus</v-icon>
               </v-btn>
               <h3 class="d-inline-block">{{item.quantity}}</h3>
-              <v-btn x-small class="mx-2 d-inline-block" fab>
-                <v-icon @click="addProduct(item.name)">mdi-plus</v-icon>
+              <v-btn 
+                x-small 
+                class="mx-2 d-inline-block" 
+                color="rgb(229,57,53)" 
+                dark 
+                fab
+                @click="addProduct(item.name)"
+                >
+                <v-icon >mdi-plus</v-icon>
               </v-btn>
             </v-card-actions>
           </div>
         </v-card>
 
-        <v-btn class="mt-3 mr-3" @click.stop="activateDialog">Limpiar productos</v-btn>
+        <v-btn small class="mt-3 ml-3 mr-2" @click.stop="activateDialog" color="rgb(229,57,53)" dark rounded>Limpiar productos</v-btn>
         <v-dialog v-model="dialog" max-width="290">
             <v-card>
-              <v-card-title class="headline">Limpiar carrito</v-card-title>
+              <v-card-title class="headline text-center">Limpiar carrito</v-card-title>
 
               <v-card-text>Si limpia el carrito de compras se eliminarán todos los productos
                   almacenados
@@ -64,7 +80,14 @@
               </v-card-actions>
             </v-card>
           </v-dialog>
-        <v-btn class="mt-3 mr-3" @click="nextShop">Continuar</v-btn>
+        <v-btn 
+            small class="mt-3 mr-3" 
+            @click="nextShop" 
+            color="rgb(229,57,53)" 
+            dark 
+            rounded
+            to="reservation_process"
+        >Continuar</v-btn>
       </v-list>
     </v-menu>
     <component v-bind:is="componentStatus" v-bind:username="getUserName"></component>

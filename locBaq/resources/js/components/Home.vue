@@ -35,7 +35,7 @@
         </div>
       </v-col>
     </v-row>
-    <v-row >
+    <v-row >  
       <v-col class="mt-5 mb-8" >
         
           <h3 class="font-weight-black">Restaurantes favoritos</h3>
