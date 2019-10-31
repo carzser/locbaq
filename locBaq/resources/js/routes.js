@@ -6,7 +6,7 @@ import perfil from './components/Perfil.vue'
 import reserva from './components/ReservaCard.vue'
 import Restaurant from './components/Restaurants.vue'
 import reservationProcess from './components/ReservationProcess.vue'
-
+import restaurantPage from './components/RestaurantPage.vue'
 
 export const routes = [
     {
@@ -42,11 +42,15 @@ export const routes = [
         component: reserva
     },
     {
-        path: '/restaurants',
+        path: '/lista_restaurantes',
         component: Restaurant
     },
     {
         path:'/realizar_pedido',
         component: reservationProcess
+    },
+    {
+        path:'/restaurante',
+        component: restaurantPage
     }
 ]
