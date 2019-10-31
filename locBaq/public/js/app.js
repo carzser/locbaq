@@ -2129,6 +2129,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2139,18 +2165,20 @@ __webpack_require__.r(__webpack_exports__);
   props: {},
   data: function data() {
     return {
-      links: ['Home', 'Register', 'Login'],
+      links: ["Home", "Register", "Login"],
       items: [{
-        name: 'item1'
+        name: "item1"
       }, {
-        name: 'item2'
+        name: "item2"
       }, {
-        name: 'item3'
+        name: "item3"
       }, {
-        name: 'item4'
+        name: "item4"
       }, {
-        name: 'item5'
-      }]
+        name: "item5"
+      }],
+      op: false,
+      dialog: false
     };
   },
   computed: {
@@ -2159,12 +2187,35 @@ __webpack_require__.r(__webpack_exports__);
     },
     getUserName: function getUserName() {
       return this.$store.state.username;
+    },
+    getItems: function getItems() {
+      return this.$store.state.shoppingCart;
     }
   },
   methods: {
     Change: function Change(upd) {
       //console.log("llego el changState y dice:",upd)
-      this.$emit('ChangeState', 'User');
+      this.$emit("ChangeState", "User");
+    },
+    addProduct: function addProduct(name) {
+      this.$store.commit("addQuantityItem", name);
+    },
+    subProduct: function subProduct(name) {
+      this.$store.commit("subQuantityItem", name);
+    },
+    cleanAll: function cleanAll() {
+      this.$store.commit("cleanShoppingCart");
+    },
+    nextShop: function nextShop() {},
+    activateDialog: function activateDialog() {
+      this.dialog = true;
+    },
+    updateData: function updateData() {
+      if (this.op) {
+        this.cleanAll();
+      }
+
+      this.dialog = false;
     }
   }
 });
@@ -22145,13 +22196,13 @@ var render = function() {
     [
       _c(
         "v-btn",
-        { staticClass: "mr-5", attrs: { text: "" } },
+        { staticClass: "mr-5", attrs: { text: "", to: "home" } },
         [_c("v-icon", [_vm._v("mdi-silverware-fork-knife")])],
         1
       ),
       _vm._v(" "),
-      _c("v-toolbar-title", { staticClass: "font-weight-black " }, [
-        _vm._v(" Localización Barranquilla")
+      _c("v-toolbar-title", { staticClass: "font-weight-black" }, [
+        _vm._v("Localización Barranquilla")
       ]),
       _vm._v(" "),
       _c("v-spacer"),
@@ -22159,7 +22210,12 @@ var render = function() {
       _c(
         "v-menu",
         {
-          attrs: { bottom: "", left: "", "offset-y": "" },
+          attrs: {
+            bottom: "",
+            left: "",
+            "offset-y": "",
+            "close-on-content-click": false
+          },
           scopedSlots: _vm._u([
             {
               key: "activator",
@@ -22181,41 +22237,163 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-list",
-            _vm._l(_vm.items, function(item, i) {
-              return _c(
-                "v-card",
+            [
+              _vm._l(_vm.getItems, function(item, i) {
+                return _c(
+                  "v-card",
+                  {
+                    key: i,
+                    staticClass: "mx-auto mt-2 ml-7 mr-6",
+                    attrs: { width: "300", height: "70" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "d-inline-block" },
+                      [
+                        _c("h3", { staticClass: "pl-5 pt-5 d-inline-block" }, [
+                          _vm._v(_vm._s(item.name))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-card-actions",
+                          { staticClass: "justify-end d-inline-block ml-12" },
+                          [
+                            _c(
+                              "v-btn",
+                              {
+                                staticClass: "mx-2 d-inline-block",
+                                attrs: { "x-small": "", fab: "" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.subProduct(item.name)
+                                  }
+                                }
+                              },
+                              [_c("v-icon", [_vm._v("mdi-minus")])],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("h3", { staticClass: "d-inline-block" }, [
+                              _vm._v(_vm._s(item.quantity))
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                staticClass: "mx-2 d-inline-block",
+                                attrs: { "x-small": "", fab: "" }
+                              },
+                              [
+                                _c(
+                                  "v-icon",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.addProduct(item.name)
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("mdi-plus")]
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                )
+              }),
+              _vm._v(" "),
+              _c(
+                "v-btn",
                 {
-                  key: i,
-                  staticClass: "mx-auto mt-2 ml-2 mr-2",
-                  attrs: { width: "300" }
+                  staticClass: "mt-3 mr-3",
+                  on: {
+                    click: function($event) {
+                      $event.stopPropagation()
+                      return _vm.activateDialog($event)
+                    }
+                  }
+                },
+                [_vm._v("Limpiar productos")]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-dialog",
+                {
+                  attrs: { "max-width": "290" },
+                  model: {
+                    value: _vm.dialog,
+                    callback: function($$v) {
+                      _vm.dialog = $$v
+                    },
+                    expression: "dialog"
+                  }
                 },
                 [
-                  _c("h3", { staticClass: "pl-5" }, [
-                    _vm._v(_vm._s(item.name))
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "v-card-actions",
+                    "v-card",
                     [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "mx-2",
-                          attrs: { "x-small": "", fab: "" }
-                        },
-                        [_c("v-icon", [_vm._v("mdi-minus")])],
-                        1
-                      ),
+                      _c("v-card-title", { staticClass: "headline" }, [
+                        _vm._v("Limpiar carrito")
+                      ]),
                       _vm._v(" "),
-                      _c("h3", [_vm._v("0")]),
+                      _c("v-card-text", [
+                        _vm._v(
+                          "Si limpia el carrito de compras se eliminarán todos los productos\n                almacenados\n            "
+                        )
+                      ]),
                       _vm._v(" "),
                       _c(
-                        "v-btn",
-                        {
-                          staticClass: "mx-2",
-                          attrs: { "x-small": "", fab: "" }
-                        },
-                        [_c("v-icon", [_vm._v("mdi-plus")])],
+                        "v-card-actions",
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "green darken-1", text: "" },
+                              on: {
+                                click: [
+                                  function($event) {
+                                    _vm.dialog = false
+                                    _vm.op = false
+                                  },
+                                  function($event) {
+                                    $event.stopPropagation()
+                                    return _vm.updateData($event)
+                                  }
+                                ]
+                              }
+                            },
+                            [_vm._v("NO")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "green darken-1", text: "" },
+                              on: {
+                                click: [
+                                  function($event) {
+                                    _vm.dialog = false
+                                    _vm.op = true
+                                  },
+                                  function($event) {
+                                    $event.stopPropagation()
+                                    return _vm.updateData($event)
+                                  }
+                                ]
+                              }
+                            },
+                            [_vm._v("YES")]
+                          )
+                        ],
                         1
                       )
                     ],
@@ -22223,9 +22401,15 @@ var render = function() {
                   )
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                { staticClass: "mt-3 mr-3", on: { click: _vm.nextShop } },
+                [_vm._v("Continuar")]
               )
-            }),
-            1
+            ],
+            2
           )
         ],
         1
@@ -77004,7 +77188,26 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     isLoged: false,
     stateNavbar: 'SignIn',
     username: "",
-    isOwner: true
+    isOwner: true,
+    shoppingCart: [{
+      name: 'p1',
+      quantity: 1
+    }, {
+      name: 'p2',
+      quantity: 1
+    }, {
+      name: 'p3',
+      quantity: 1
+    }, {
+      name: 'p4',
+      quantity: 1
+    }, {
+      name: 'p5',
+      quantity: 1
+    }, {
+      name: 'p6',
+      quantity: 1
+    }]
   },
   mutations: {
     changeLogState: function changeLogState(data) {
@@ -77019,6 +77222,91 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     setUsername: function setUsername(data, name) {
       console.log(name);
       data.username = name;
+    },
+    addItem: function addItem(data, item) {
+      data.shoppingCart.append({
+        name: item,
+        quantity: 1
+      });
+    },
+    addQuantityItem: function addQuantityItem(data, itemName) {
+      var ob;
+      var i = 0,
+          idx;
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = data.shoppingCart[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          ob = _step.value;
+
+          if (ob.name == itemName) {
+            idx = i;
+            break;
+          }
+
+          i++;
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+            _iterator["return"]();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      data.shoppingCart[idx].quantity++;
+    },
+    subQuantityItem: function subQuantityItem(data, itemName) {
+      var ob,
+          i = 0,
+          idx;
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = data.shoppingCart[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          ob = _step2.value;
+
+          if (ob.name == itemName) {
+            idx = i;
+            break;
+          }
+
+          i++;
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+            _iterator2["return"]();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+
+      data.shoppingCart[idx].quantity--;
+
+      if (data.shoppingCart[idx].quantity == 0) {
+        data.shoppingCart.splice(idx, 1);
+      }
+    },
+    cleanShoppingCart: function cleanShoppingCart(data) {
+      data.shoppingCart = [];
     }
   }
 });

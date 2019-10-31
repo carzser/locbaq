@@ -26,7 +26,33 @@ export const store = new Vuex.Store({
         isLoged: false,
         stateNavbar: 'SignIn',
         username: "",
-        isOwner: true
+        isOwner: true,
+        shoppingCart:[
+            {
+                name: 'p1',
+                quantity: 1
+            },
+            {
+                name: 'p2',
+                quantity: 1
+            },
+            {
+                name: 'p3',
+                quantity: 1
+            },
+            {
+                name: 'p4',
+                quantity: 1
+            },
+            {
+                name: 'p5',
+                quantity: 1
+            },
+            {
+                name: 'p6',
+                quantity: 1
+            }
+        ]
     },
     mutations:{
         changeLogState(data){
@@ -42,6 +68,38 @@ export const store = new Vuex.Store({
         setUsername(data,name){
             console.log(name)
             data.username = name    
+        },
+        addItem(data,item){
+            data.shoppingCart.append({name:item,quantity:1});
+        },
+        addQuantityItem(data,itemName){
+          var ob;
+          var i = 0,idx;
+            for (ob of data.shoppingCart){
+            if(ob.name == itemName){
+                idx = i;
+                break;
+            }
+            i++;
+          }  
+          data.shoppingCart[idx].quantity++;
+        },
+        subQuantityItem(data,itemName){
+            var ob, i = 0,idx;
+            for (ob  of  data.shoppingCart){
+              if(ob.name == itemName){
+                  idx = i;
+                  break;
+              }
+              i++;
+            }  
+            data.shoppingCart[idx].quantity--;
+            if(data.shoppingCart[idx].quantity==0){
+                data.shoppingCart.splice(idx,1);
+            }
+        },
+        cleanShoppingCart(data){
+            data.shoppingCart=[];
         }
 
     }
