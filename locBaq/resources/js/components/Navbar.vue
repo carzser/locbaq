@@ -22,20 +22,19 @@
             <v-card
                 v-for="(item,i) in items"
                 :key = "i"
-                class="mx-auto mt-2 ml-2 mr-2"
+                class="mx-auto mt-2 ml-2 mr-2 "
                 width="300"
+                height="50"
+                
             >
-                <h3 class="pl-5">{{item.name}}</h3>
-
-            <v-card-actions>
-                <v-btn x-small class="mx-2" fab>
+                <h3 class="d-inline-block pl-5" style="align:right">{{item.name}}</h3>
+                <v-btn x-small class="text-right d-inline-block mx-2" fab>
                     <v-icon >mdi-minus</v-icon>
                 </v-btn>
-                <h3>0</h3>
-                <v-btn x-small class="mx-2" fab>
+                <h3 class="d-inline-block pt-3 text-right" >0</h3>
+                <v-btn x-small class="d-inline-block text-right mx-2" fab>
                     <v-icon >mdi-plus</v-icon>
                 </v-btn>
-            </v-card-actions>
             </v-card>
             
             </v-list>

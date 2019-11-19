@@ -2128,7 +2128,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -22186,39 +22185,40 @@ var render = function() {
                 "v-card",
                 {
                   key: i,
-                  staticClass: "mx-auto mt-2 ml-2 mr-2",
-                  attrs: { width: "300" }
+                  staticClass: "mx-auto mt-2 ml-2 mr-2 ",
+                  attrs: { width: "300", height: "50" }
                 },
                 [
-                  _c("h3", { staticClass: "pl-5" }, [
-                    _vm._v(_vm._s(item.name))
+                  _c(
+                    "h3",
+                    {
+                      staticClass: "d-inline-block pl-5",
+                      staticStyle: { align: "right" }
+                    },
+                    [_vm._v(_vm._s(item.name))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "text-right d-inline-block mx-2",
+                      attrs: { "x-small": "", fab: "" }
+                    },
+                    [_c("v-icon", [_vm._v("mdi-minus")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "d-inline-block pt-3 text-right" }, [
+                    _vm._v("0")
                   ]),
                   _vm._v(" "),
                   _c(
-                    "v-card-actions",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "mx-2",
-                          attrs: { "x-small": "", fab: "" }
-                        },
-                        [_c("v-icon", [_vm._v("mdi-minus")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("h3", [_vm._v("0")]),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "mx-2",
-                          attrs: { "x-small": "", fab: "" }
-                        },
-                        [_c("v-icon", [_vm._v("mdi-plus")])],
-                        1
-                      )
-                    ],
+                    "v-btn",
+                    {
+                      staticClass: "d-inline-block text-right mx-2",
+                      attrs: { "x-small": "", fab: "" }
+                    },
+                    [_c("v-icon", [_vm._v("mdi-plus")])],
                     1
                   )
                 ],
@@ -78312,8 +78312,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
