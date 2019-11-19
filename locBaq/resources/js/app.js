@@ -1,35 +1,114 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
+import Vue from 'vue'
+import Vuex from 'vuex'
+import VueRouter from 'vue-router'
+import Vuetify from 'vuetify'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
-window.Vue = require('vue');
-import Vuetify from 'vuetify';
+import App from '@/js/views/App'
+import MainApp from './components/MainApp.vue';
+import {routes} from './routes'
+//window.Vue = require('vue');
+
 Vue.use(Vuetify);
-import Vuex from 'vuex';
+Vue.use(VueRouter);
 Vue.use(Vuex);
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+Vue.use(VueAxios, axios);
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+const router = new VueRouter({
+    mode: 'history',
+    routes
+})
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+export const store = new Vuex.Store({
+    state: {
+        isLoged: false,
+        stateNavbar: 'SignIn',
+        username: "",
+        isOwner: true,
+        shoppingCart:[
+            {
+                name: 'p1',
+                quantity: 1
+            },
+            {
+                name: 'p2',
+                quantity: 1
+            },
+            {
+                name: 'p3',
+                quantity: 1
+            },
+            {
+                name: 'p4',
+                quantity: 1
+            },
+            {
+                name: 'p5',
+                quantity: 1
+            },
+            {
+                name: 'p6',
+                quantity: 1
+            }
+        ]
+    },
+    mutations:{
+        changeLogState(data){
+            if(data.isLoged){
+                data.isLoged = false;
+                data.stateNavbar = 'SignIn';
+            }
+            else{
+                data.isLoged = true;
+                data.stateNavbar = 'User'
+            }
+        },
+        setUsername(data,name){
+            console.log(name)
+            data.username = name    
+        },
+        addItem(data,item){
+            data.shoppingCart.append({name:item,quantity:1});
+        },
+        addQuantityItem(data,itemName){
+          var ob;
+          var i = 0,idx;
+            for (ob of data.shoppingCart){
+            if(ob.name == itemName){
+                idx = i;
+                break;
+            }
+            i++;
+          }  
+          data.shoppingCart[idx].quantity++;
+        },
+        subQuantityItem(data,itemName){
+            var ob, i = 0,idx;
+            for (ob  of  data.shoppingCart){
+              if(ob.name == itemName){
+                  idx = i;
+                  break;
+              }
+              i++;
+            }  
+            data.shoppingCart[idx].quantity--;
+            if(data.shoppingCart[idx].quantity==0){
+                data.shoppingCart.splice(idx,1);
+            }
+        },
+        cleanShoppingCart(data){
+            data.shoppingCart=[];
+        }
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+    }
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
+})
 const app = new Vue({
-    el: '#app',
+    el:'#app',
+    router,
+    vuetify : new Vuetify(),
+    store: store,
+    render: h=> h(App),
 });
