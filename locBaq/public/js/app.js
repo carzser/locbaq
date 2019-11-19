@@ -3288,14 +3288,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'register',
+  name: "register",
   components: {},
   data: function data() {
     return {
@@ -3308,15 +3302,15 @@ __webpack_require__.r(__webpack_exports__);
       enablePassword: true,
       enablePassword2: true,
       enableCombo: true,
-      nameInpt: '',
-      lastNameInpt: '',
-      cellphoneInpt: '',
-      emailInpt: '',
-      passwordInpt: '',
-      password2Inpt: '',
-      select: '',
-      links: ['Home', 'Login', 'Register'],
-      items: ['Si', 'No']
+      nameInpt: "",
+      lastNameInpt: "",
+      cellphoneInpt: "",
+      emailInpt: "",
+      passwordInpt: "",
+      password2Inpt: "",
+      select: "",
+      links: ["Home", "Login", "Register"],
+      items: ["Si", "No"]
     };
   },
   methods: {
@@ -3354,15 +3348,17 @@ __webpack_require__.r(__webpack_exports__);
       this.validComboBox();
 
       if (this.enableName && this.enableLastName && this.enablePhone && this.enableEmail && this.enablePassword && this.enablePassword2 && this.enableCombo) {
-        /*var text = {
-            "Name" : this.nameInpt,
-            "LastName" : this.lastNameInpt,
-            "Phone" : this.PhoneInpt,
-            "Email" : this.emailInpt,
-            "Password" : this.passwordInpt
-        }
-        var obj = JSON.stringify(text);
-        */
+        var text = {
+          Name: this.nameInpt,
+          LastName: this.lastNameInpt,
+          Phone: this.PhoneInpt,
+          Email: this.emailInpt,
+          Password: this.passwordInpt
+        };
+        this.axios.post("http://localhost:8000/api/register", text).then(function (response) {
+          console.log("Se vienen los datos");
+          console.log(response.data);
+        });
       } else {
         alert("Complete los campos");
       }
@@ -3577,12 +3573,15 @@ __webpack_require__.r(__webpack_exports__);
       var op = this.emailInpt.match(/\S+@\S+\.\S+/) != null && this.passwordInpt.length > 2;
 
       if (op) {
-        /*var text = JSON.stringify({
-          "Email":this.emailInpt,
-          "Password":this.passwordInpt
-          })
-          console.log(text)
-          */
+        var text = {
+          "Email": this.emailInpt,
+          "Password": this.passwordInpt
+        };
+        this.axios.post('http://localhost:8000/api/login', text).then(function (response) {
+          console.log("Se vienen los datos");
+          console.log(response.data);
+        });
+        console.log(text);
         this.enableEmail = true;
         this.enablePassword = true;
         this.$store.commit('changeLogState');
@@ -79105,8 +79104,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

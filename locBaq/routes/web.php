@@ -12,3 +12,7 @@
 */
 
 Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+
+Route::post('/api/login','SinglePageController@login');
+
+Route::post('/api/register','SinglePageController@register');
