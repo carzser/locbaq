@@ -8,7 +8,7 @@
     <v-spacer></v-spacer>
     <v-menu max-height="400" scroll-y bottom left offset-y :close-on-content-click="false">
       <template v-slot:activator="{ on }">
-        <v-btn icon v-on="on">
+        <v-btn icon v-on="on" class = "mr-5">
           <v-icon>mdi-cart-outline</v-icon>
         </v-btn>
       </template>
@@ -90,7 +90,7 @@
         >Continuar</v-btn>
       </v-list>
     </v-menu>
-    <component v-bind:is="componentStatus" v-bind:username="getUserName"></component>
+    <component class="mx-5" v-bind:is="componentStatus" v-bind:username="getUserName"></component>
   </v-app-bar>
 </template>
 

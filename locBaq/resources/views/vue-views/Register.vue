@@ -145,12 +145,13 @@ export default {
         this.enableCombo
       ) {
         var text = {
-          Name: this.nameInpt,
-          LastName: this.lastNameInpt,
-          Phone: this.PhoneInpt,
-          Email: this.emailInpt,
-          Password: this.passwordInpt
+          'Name': this.nameInpt,
+          'LastName': this.lastNameInpt,
+          'Phone': this.cellphoneInpt,
+          'Email': this.emailInpt,
+          'Password': this.passwordInpt
         };
+        console.log(text);
         this.axios
           .post("http://localhost:8000/api/register", text)
           .then(response => {
