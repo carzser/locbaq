@@ -151,15 +151,18 @@ export default {
           this.validComboBox()
           if(this.enableName && this.enableLastName && this.enablePhone && 
           this.enableEmail && this.enablePassword && this.enablePassword2 && this.enableCombo){
-              /*var text = {
+              var text = {
                   "Name" : this.nameInpt,
                   "LastName" : this.lastNameInpt,
                   "Phone" : this.PhoneInpt,
                   "Email" : this.emailInpt,
                   "Password" : this.passwordInpt
               }
-              var obj = JSON.stringify(text);
-              */
+              this.axios.post('http://localhost:8000/api/register',text).then((response) => {
+                console.log(response.data);
+                alert("Registro exitoso");
+                this.$router.push({ path: 'home' });        
+             }); 
           }
           else{
               alert("Complete los campos")

@@ -2980,6 +2980,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     username: String
@@ -3186,6 +3188,8 @@ __webpack_require__.r(__webpack_exports__);
       this.enableCombo = !(this.select == "");
     },
     validAll: function validAll() {
+      var _this = this;
+
       this.validName();
       this.validLastName();
       this.validPhone();
@@ -3195,15 +3199,21 @@ __webpack_require__.r(__webpack_exports__);
       this.validComboBox();
 
       if (this.enableName && this.enableLastName && this.enablePhone && this.enableEmail && this.enablePassword && this.enablePassword2 && this.enableCombo) {
-        /*var text = {
-            "Name" : this.nameInpt,
-            "LastName" : this.lastNameInpt,
-            "Phone" : this.PhoneInpt,
-            "Email" : this.emailInpt,
-            "Password" : this.passwordInpt
-        }
-        var obj = JSON.stringify(text);
-        */
+        var text = {
+          "Name": this.nameInpt,
+          "LastName": this.lastNameInpt,
+          "Phone": this.PhoneInpt,
+          "Email": this.emailInpt,
+          "Password": this.passwordInpt
+        };
+        this.axios.post('http://localhost:8000/api/register', text).then(function (response) {
+          console.log(response.data);
+          alert("Registro exitoso");
+
+          _this.$router.push({
+            path: 'home'
+          });
+        });
       } else {
         alert("Complete los campos");
       }
@@ -3343,11 +3353,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    if (this.$store.state.isLoged && this.$store.state.isOwner) {} else {
-      this.$router.push({
-        path: 'home'
-      });
+    /*if(this.$store.state.isLoged  && this.$store.state.isOwner){ 
     }
+    else{
+        this.$router.push({ path: 'home' })
+    } */
   }
 });
 
@@ -3418,12 +3428,13 @@ __webpack_require__.r(__webpack_exports__);
       var op = this.emailInpt.match(/\S+@\S+\.\S+/) != null && this.passwordInpt.length > 2;
 
       if (op) {
-        /*var text = JSON.stringify({
-          "Email":this.emailInpt,
-          "Password":this.passwordInpt
-          })
-          console.log(text)
-          */
+        var obj = {
+          "email": this.emailInpt,
+          "password": this.passwordInpt
+        };
+        this.axios.post('http://localhost:8000/api/login', obj).then(function (response) {
+          console.log(response.data);
+        });
         this.enableEmail = true;
         this.enablePassword = true;
         this.$store.commit('changeLogState');
@@ -23025,14 +23036,19 @@ var render = function() {
       _c(
         "v-row",
         [
-          _c("h3", { attrs: { clas: "mess", id: "h3m" } }, [
+          _c("h3", { attrs: { clas: "mess ml-5", id: "h3m" } }, [
             _vm._v("Hola querido " + _vm._s(_vm.username))
           ]),
           _vm._v(" "),
           _c(
-            "v-icon",
-            { staticClass: "mess", attrs: { to: _vm.myprofile, large: "" } },
-            [_vm._v("mdi-account-circle")]
+            "v-btn",
+            { attrs: { to: _vm.myprofile, icon: "" } },
+            [
+              _c("v-icon", { staticClass: "mess", attrs: { "x-large": "" } }, [
+                _vm._v("mdi-account-circle")
+              ])
+            ],
+            1
           ),
           _vm._v(" "),
           _vm._l(_vm.links, function(link) {
