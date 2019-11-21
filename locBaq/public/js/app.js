@@ -2432,6 +2432,9 @@ __webpack_require__.r(__webpack_exports__);
       console.log("this.op:", this.op);
 
       if (!this.op) {
+        this.axios.post('/api/updateUser', newUser).then(function (response) {
+          console.log(response.data);
+        })["catch"](function (error) {});
         this.nameInpt = this.aux.name;
         this.lastNameInpt = this.aux.lastName;
         this.cellphoneInpt = this.aux.cellphone;
@@ -2440,17 +2443,18 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    var User = {
-      name: "Fabio",
-      lastName: "Zapata",
-      email: "Fabioz@uninorte.edu.co",
-      cellphone: "3043479853"
-    };
-    this.nameInpt = User.name;
-    this.lastNameInpt = User.lastName;
-    this.emailInpt = User.email;
-    this.cellphoneInpt = User.cellphone;
-    console.log(User);
+    var _this = this;
+
+    this.axios.post('/api/getUser', this.$store.state.token).then(function (response) {
+      console.log(response.data);
+      _this.nameInpt = response.data.FirstName;
+      _this.lastNameInpt = response.data.lastName;
+      _this.emailInpt = response.data.Email;
+      _this.cellphoneInpt = response.data.Cellphone;
+    })["catch"](function (error) {
+      console.log("Llegó esto a cliente");
+      console.log(error.response);
+    });
   }
 });
 
@@ -3161,6 +3165,11 @@ __webpack_require__.r(__webpack_exports__);
       console.log(v);
       return v;
     }
+  },
+  created: function created() {
+    this.axios.post('/api/gestRest').then(function (response) {
+      console.log(response.data);
+    })["catch"](function (error) {});
   }
 });
 
@@ -3550,20 +3559,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.enableName && this.enableLastName && this.enablePhone && this.enableEmail && this.enablePassword && this.enablePassword2 && this.enableCombo) {
         var text = {
-<<<<<<< HEAD
-          'Name': this.nameInpt,
-          'LastName': this.lastNameInpt,
-          'Phone': this.cellphoneInpt,
-          'Email': this.emailInpt,
-          'Password': this.passwordInpt
-=======
           idUser: Math.floor(Math.random() * (10000 - 1 + 1) + 1),
           FirstName: this.nameInpt,
           LastName: this.lastNameInpt,
           Email: this.emailInpt,
           Password: this.passwordInpt,
           Cellphone: this.cellphoneInpt
->>>>>>> cc27cfffc9378f1512f87db1caa9035c7dff7de5
         };
         console.log(text);
         this.axios.post('/api/register', text).then(function (response) {
@@ -3706,7 +3707,18 @@ __webpack_require__.r(__webpack_exports__);
       this.validUlr();
       this.validDescr();
 
-      if (this.enablePhone && this.enableName && this.enableEmail && this.enableAddress && this.enableUrl && this.validDescr) {} else {
+      if (this.enablePhone && this.enableName && this.enableEmail && this.enableAddress && this.enableUrl && this.validDescr) {
+        var info = {
+          'name': this.nameInpt,
+          'address': this.addressInpt,
+          'cellphone': this.cellphoneInpt,
+          'email': this.emailInpt,
+          'descr': this.descrInpt
+        };
+        this.axios.post('/api/createRest', info).then(function (response) {
+          console.log(response.data);
+        })["catch"](function (error) {});
+      } else {
         alert('Complete los campos');
       }
     }
@@ -3778,6 +3790,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     isValid: function isValid() {
+      var _this = this;
+
       var op = this.emailInpt.match(/\S+@\S+\.\S+/) != null && this.passwordInpt.length > 2;
 
       if (op) {
@@ -3789,19 +3803,32 @@ __webpack_require__.r(__webpack_exports__);
         this.axios.post('/api/login', text).then(function (response) {
           console.log("Se vienen los datos");
           console.log(response.data);
+
+          if (response.data.Message == "inicio exitoso") {
+            _this.$store.commit('changeLogState');
+
+            var strin = "" + response.data.FirstName + " " + response.data.LastName;
+
+            _this.$store.commit('setUsername', strin);
+
+            _this.$store.commit('SetToken', _this.emailInpt); //console.log("el valor del boolean es"+ this.$store.state.isLoged);
+
+
+            _this.$router.push({
+              path: 'home'
+            });
+          } else if (response.data.Message == "el usuario no existe") {
+            alert("El Usuario no existe");
+            _this.enableEmail = false;
+          } else {
+            alert("Contraseña incorrecta");
+            _this.enablePassword = false;
+          }
         })["catch"](function (error) {
           console.log("Llegó esto a cliente");
           console.log(error.response);
         });
         console.log(text);
-        this.enableEmail = true;
-        this.enablePassword = true;
-        this.$store.commit('changeLogState');
-        this.$store.commit('setUsername', this.emailInpt); //console.log("el valor del boolean es"+ this.$store.state.isLoged);
-
-        this.$router.push({
-          path: 'home'
-        }); //window.location =  ('./');
       } else {
         alert("Complete los campos");
         this.enableEmail = this.emailInpt.match(/\S+@\S+\.\S+/) != null;
@@ -24056,7 +24083,7 @@ var render = function() {
             "v-btn",
             {
               staticClass: "pb-3",
-              attrs: { to: _vm.myprofile, icon: "", text: "" }
+              attrs: { to: "myprofile", icon: "", text: "" }
             },
             [
               _c(
@@ -78037,6 +78064,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     isLoged: false,
     stateNavbar: 'SignIn',
     username: "",
+    token: "",
     isOwner: true,
     shoppingCart: [{
       name: 'p1',
@@ -78077,6 +78105,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     setUsername: function setUsername(data, name) {
       console.log(name);
       data.username = name;
+    },
+    setToken: function setToken(data, token) {
+      data.token = token;
     },
     addItem: function addItem(data, item) {
       data.shoppingCart.append({
@@ -79462,15 +79493,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************!*\
   !*** ./resources/views/vue-views/Register.vue ***!
   \************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Register_vue_vue_type_template_id_560ef564___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Register.vue?vue&type=template&id=560ef564& */ "./resources/views/vue-views/Register.vue?vue&type=template&id=560ef564&");
 /* harmony import */ var _Register_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Register.vue?vue&type=script&lang=js& */ "./resources/views/vue-views/Register.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Register_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Register_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -79500,7 +79530,7 @@ component.options.__file = "resources/views/vue-views/Register.vue"
 /*!*************************************************************************!*\
   !*** ./resources/views/vue-views/Register.vue?vue&type=script&lang=js& ***!
   \*************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79532,15 +79562,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./resources/views/vue-views/createRest.vue ***!
   \**************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createRest_vue_vue_type_template_id_6f3c4e5e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createRest.vue?vue&type=template&id=6f3c4e5e& */ "./resources/views/vue-views/createRest.vue?vue&type=template&id=6f3c4e5e&");
 /* harmony import */ var _createRest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createRest.vue?vue&type=script&lang=js& */ "./resources/views/vue-views/createRest.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _createRest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _createRest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -79570,7 +79599,7 @@ component.options.__file = "resources/views/vue-views/createRest.vue"
 /*!***************************************************************************!*\
   !*** ./resources/views/vue-views/createRest.vue?vue&type=script&lang=js& ***!
   \***************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79674,8 +79703,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

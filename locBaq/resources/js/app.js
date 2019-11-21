@@ -26,6 +26,7 @@ export const store = new Vuex.Store({
         isLoged: false,
         stateNavbar: 'SignIn',
         username: "",
+        token:"",
         isOwner: true,
         shoppingCart:[
             {
@@ -74,6 +75,9 @@ export const store = new Vuex.Store({
         setUsername(data,name){
             console.log(name)
             data.username = name    
+        },
+        setToken(data,token){
+            data.token = token;
         },
         addItem(data,item){
             data.shoppingCart.append({name:item,quantity:1});
