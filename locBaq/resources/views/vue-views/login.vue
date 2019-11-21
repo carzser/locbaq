@@ -59,14 +59,16 @@ export default {
     isValid(){
       var op = this.emailInpt.match(/\S+@\S+\.\S+/) != null && this.passwordInpt.length > 2
       if(op){
-        var obj = {
-          "email":this.emailInpt,
-          "password":this.passwordInpt
-          };
+        var text ={
+          "Email":this.emailInpt,
+          "Password":this.passwordInpt
+          }
+          this.axios.post('http://localhost:8000/api/login',text).then((response) =>{
+            console.log("Se vienen los datos");
+            console.log(response.data);
+          });
+          console.log(text)
           
-          this.axios.post('http://localhost:8000/api/login',obj).then((response) => {
-            console.log(response.data);        
-          }); 
           this.enableEmail = true
           this.enablePassword = true
           this.$store.commit('changeLogState');
