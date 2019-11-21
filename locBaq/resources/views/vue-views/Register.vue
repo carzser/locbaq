@@ -145,15 +145,16 @@ export default {
         this.enableCombo
       ) {
         var text = {
+          idUser: Math.floor(Math.random() * (10000 - 1 + 1) + 1) ,
           FirstName: this.nameInpt,
-          LastName: this.lastNameInpt,
-          Cellphone: this.cellphoneInpt,
+          LastName: this.lastNameInpt,       
           Email: this.emailInpt,
-          Password: this.passwordInpt
+          Password: this.passwordInpt,
+          Cellphone: this.cellphoneInpt
         };
         console.log(text);
         this.axios
-          .post("http://localhost:8000/api/register", text)
+          .post('/api/register', text)
           .then(response => {
             console.log("Se vienen los datos");
             console.log(response.data);

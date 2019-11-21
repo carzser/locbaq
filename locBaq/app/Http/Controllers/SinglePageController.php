@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class SinglePageController extends Controller
 {
@@ -11,39 +12,46 @@ class SinglePageController extends Controller
         return view('app');
     }
 
-    public function login(){
-      return 'hola';
+    public function login(Request $request){
+
+      $verificarlogin = true;
+
+      $userdata = User::find($request['Email']);
+
+      if($userdata == null){
+        $verificarlogin = false;
+        return ['Message' => 'el usuario no existe'];
+      }else if($request['Password'] == $userdata->Password){
+        return ['Message' => 'inicio exitoso', 'FirstName' => $userdata->FirstName, 'LastName' => $userdata->LastName];
+      }else{
+        return ['Message' => 'contraseña incorrecta'];
+      }
+      
     }
 
     public function register(Request $request){
-      
-      
-      
-      /*console.log($request.config.data);
-      $usuarioNuevo = new App\User;
-      
-      
-      $usuarioNuevo->idUser = 1;
-      $usuarioNuevo->FirstName = $request->Name;
-      $usuarioNuevo->LastName = $request->LastName;
-      $usuarioNuevo->Email = $request->Email;
-      $usuarioNuevo->Password = $request->Password;
-      $usuarioNuevo->Cellphone = $request->Phone;
-      
 
-      $usuarioNuevo->save();
+      $verificar = false;
 
-      return 'ok';*/
+      $userdata = User::find($request['Email']);
+      if($userdata == null){
+        $verificar = true;
+      }
 
-     
+      if($verificar == true){
+        $usuarionuevo = User::create([
+          'idUser' => $request['idUser'],
+          'FirstName' => $request['FirstName'],
+          'LastName' => $request['LastName'],
+          'Email' => $request['Email'],
+          'Password' => $request['Password'],
+          'Cellphone' => $request['Cellphone']
+        ]);
 
-      User::table('users')->insert([
-        ['idUser' => '3', 'FirstName' => $request->FirstName, 'LastName' => $request->LastName, 'Email' => $request->Email, 'Password' => $request->Password, 'Cellphone' => $request->Cellphone]
-        
-    ]);
+        return ['Message' => 'registro exitoso'];
 
-      return(['message' => 'agregado']);
-
-      
+        }else{
+          return ['Message' => 'usuario ya existente'];
+        }
     }
 }

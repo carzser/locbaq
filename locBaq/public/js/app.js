@@ -3351,14 +3351,15 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.enableName && this.enableLastName && this.enablePhone && this.enableEmail && this.enablePassword && this.enablePassword2 && this.enableCombo) {
         var text = {
+          idUser: Math.floor(Math.random() * (10000 - 1 + 1) + 1),
           FirstName: this.nameInpt,
           LastName: this.lastNameInpt,
-          Cellphone: this.cellphoneInpt,
           Email: this.emailInpt,
-          Password: this.passwordInpt
+          Password: this.passwordInpt,
+          Cellphone: this.cellphoneInpt
         };
         console.log(text);
-        this.axios.post("http://localhost:8000/api/register", text).then(function (response) {
+        this.axios.post('/api/register', text).then(function (response) {
           console.log("Se vienen los datos");
           console.log(response.data);
         })["catch"](function (error) {
@@ -3583,16 +3584,20 @@ __webpack_require__.r(__webpack_exports__);
           "Email": this.emailInpt,
           "Password": this.passwordInpt
         };
-        this.axios.post('http://localhost:8000/api/login', text).then(function (response) {
+        console.log(text);
+        this.axios.post('/api/login', text).then(function (response) {
           console.log("Se vienen los datos");
           console.log(response.data);
+        })["catch"](function (error) {
+          console.log("Llegó esto a cliente");
+          console.log(error.response);
         });
         console.log(text);
         this.enableEmail = true;
         this.enablePassword = true;
         this.$store.commit('changeLogState');
-        this.$store.commit('setUsername', this.emailInpt);
-        console.log("el valor del boolean es" + this.$store.state.isLoged);
+        this.$store.commit('setUsername', this.emailInpt); //console.log("el valor del boolean es"+ this.$store.state.isLoged);
+
         this.$router.push({
           path: 'home'
         }); //window.location =  ('./');
@@ -79115,8 +79120,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

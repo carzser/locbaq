@@ -63,9 +63,14 @@ export default {
           "Email":this.emailInpt,
           "Password":this.passwordInpt
           }
-          this.axios.post('http://localhost:8000/api/login',text).then((response) =>{
+          console.log(text);
+          this.axios.post('/api/login',text).then((response) =>{
             console.log("Se vienen los datos");
             console.log(response.data);
+          })
+           .catch(error => {
+            console.log("Llegó esto a cliente");
+            console.log(error.response);
           });
           console.log(text)
           
@@ -73,7 +78,7 @@ export default {
           this.enablePassword = true
           this.$store.commit('changeLogState');
           this.$store.commit('setUsername',this.emailInpt)
-          console.log("el valor del boolean es"+ this.$store.state.isLoged);
+          //console.log("el valor del boolean es"+ this.$store.state.isLoged);
           this.$router.push({ path: 'home' })
           //window.location =  ('./');
       }
