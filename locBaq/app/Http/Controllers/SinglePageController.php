@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class SinglePageController extends Controller
 {
@@ -15,29 +16,34 @@ class SinglePageController extends Controller
     }
 
     public function register(Request $request){
-
+      
+      
+      
+      /*console.log($request.config.data);
+      $usuarioNuevo = new App\User;
+      
+      
+      $usuarioNuevo->idUser = 1;
+      $usuarioNuevo->FirstName = $request->Name;
+      $usuarioNuevo->LastName = $request->LastName;
+      $usuarioNuevo->Email = $request->Email;
+      $usuarioNuevo->Password = $request->Password;
+      $usuarioNuevo->Cellphone = $request->Phone;
       
 
-      /*$user = new restaurant;
+      $usuarioNuevo->save();
 
-    
+      return 'ok';*/
+
+     
+
+      User::table('users')->insert([
+        ['idUser' => '3', 'FirstName' => $request->FirstName, 'LastName' => $request->LastName, 'Email' => $request->Email, 'Password' => $request->Password, 'Cellphone' => $request->Cellphone]
+        
+    ]);
+
+      return(['message' => 'agregado']);
+
       
-
-      $user->idRestaurant = $request->Name;
-      $user->Name = $request->LastName;
-      $user->Category = $request->Email;
-      $user->Latitude = $request->Password;
-      $user->Longitude = $request->Phone;
-      $user->Score = '10';
-      $user->ScheduleOpen = '100';
-      $user->ScheduleClose = '200';
-      $user->save();*/
-
-      return 'hola';
-      
-   
-    
-
-    
     }
 }

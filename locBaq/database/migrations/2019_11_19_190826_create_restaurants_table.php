@@ -24,14 +24,7 @@ class CreateRestaurantsTable extends Migration
           $table->string('ScheduleClose');
         });
 
-        Schema::create('users', function (Blueprint $table) {
-          $table->bigIncrements('idUser');
-          $table->string('FirstName');
-          $table->string('LastName');
-          $table->string('Email')->unique();
-          $table->string('Password');
-          $table->string('Cellphone');
-      });
+        
     }
 
     /**
@@ -42,6 +35,5 @@ class CreateRestaurantsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('restaurants');
-        Schema::dropIfExists('users');
     }
 }

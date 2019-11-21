@@ -3351,15 +3351,19 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.enableName && this.enableLastName && this.enablePhone && this.enableEmail && this.enablePassword && this.enablePassword2 && this.enableCombo) {
         var text = {
-          Name: this.nameInpt,
+          FirstName: this.nameInpt,
           LastName: this.lastNameInpt,
-          Phone: this.PhoneInpt,
+          Cellphone: this.cellphoneInpt,
           Email: this.emailInpt,
           Password: this.passwordInpt
         };
+        console.log(text);
         this.axios.post("http://localhost:8000/api/register", text).then(function (response) {
           console.log("Se vienen los datos");
           console.log(response.data);
+        })["catch"](function (error) {
+          console.log("Llegó esto a cliente");
+          console.log(error.response);
         });
       } else {
         alert("Complete los campos");
