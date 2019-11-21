@@ -16,3 +16,11 @@ Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 Route::post('/api/login','SinglePageController@login');
 
 Route::post('/api/register','SinglePageController@register');
+
+Route::post('/api/getUser','SinglePageController@getUser');
+
+Route::post('/api/updateUser','SinglePageController@updateUser');
+
+Route::post('/api/getRest','SinglePageController@getRest');
+
+Route::post('/api/createRest','SinglePageController@createRest');

@@ -195,7 +195,7 @@ export default {
     this.axios.post('/api/getUser',this.$store.state.token).then((response) =>{
       console.log(response.data);
       this.nameInpt = response.data.FirstName;
-      this.lastNameInpt = response.data.lastName;
+      this.lastNameInpt = response.data.LastName;
       this.emailInpt = response.data.Email;
       this.cellphoneInpt = response.data.Cellphone;
     })

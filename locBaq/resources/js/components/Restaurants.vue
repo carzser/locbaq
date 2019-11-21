@@ -250,7 +250,7 @@ export default {
         }
     },
     created(){
-        this.axios.post('/api/gestRest').then((response)=>{
+        this.axios.post('/api/getRest').then((response)=>{
             console.log(response.data);
         }).catch(error =>{
 

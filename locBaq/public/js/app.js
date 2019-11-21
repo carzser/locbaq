@@ -2448,7 +2448,7 @@ __webpack_require__.r(__webpack_exports__);
     this.axios.post('/api/getUser', this.$store.state.token).then(function (response) {
       console.log(response.data);
       _this.nameInpt = response.data.FirstName;
-      _this.lastNameInpt = response.data.lastName;
+      _this.lastNameInpt = response.data.LastName;
       _this.emailInpt = response.data.Email;
       _this.cellphoneInpt = response.data.Cellphone;
     })["catch"](function (error) {
@@ -3167,7 +3167,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    this.axios.post('/api/gestRest').then(function (response) {
+    this.axios.post('/api/getRest').then(function (response) {
       console.log(response.data);
     })["catch"](function (error) {});
   }
@@ -79703,8 +79703,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

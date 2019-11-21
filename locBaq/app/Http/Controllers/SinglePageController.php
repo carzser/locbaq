@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use app\restaurant;
 
 class SinglePageController extends Controller
 {
@@ -52,6 +53,62 @@ class SinglePageController extends Controller
 
         }else{
           return ['Message' => 'usuario ya existente'];
+        }
+    }
+
+    public function getUser(Request $request){
+
+      $userdata = User::find($request['Email']);
+
+      return [
+        'FirstName' => $userdata->FirstName,
+        'LastName' => $userdata->LastName,
+        'Email' => $userdata->Email,
+        'Cellphone' => $userdata->Cellphone
+      ];
+
+    }
+
+
+    public function updateUser(Request $request){
+
+      $userdata = User::find($request['Email']);
+
+      $userdata->FirstName = $request['FirstName'];
+      $userdata->LastName = $request['LastName'];
+      $userdata->Cellphone = $request['Cellphone'];
+
+      return ['Message' => 'datos actualizados'];
+
+    }
+
+    public function getRest(){
+      $todosRestaurantes = restaurant::get();
+      return todosRestaurantes;
+    }
+
+    public function createRest(Request $request){
+
+      $verificar = false;
+
+      $restaurantdata = restaurant::find($request['Email']);
+      if($restaurantdata == null){
+        $verificar = true;
+      }
+
+      if($verificar == true){
+        $restaurantenuevo = restaurant::create([
+          'Name' => $request['Name'],
+          'Address' => $request['Address'],
+          'Cellphone' => $request['Cellphone'],
+          'Email' => $request['Email'],
+          'idUser' => $request['idUser']
+        ]);
+
+        return ['Message' => 'registro exitoso'];
+
+        }else{
+          return ['Message' => 'restaurante ya existente'];
         }
     }
 }
