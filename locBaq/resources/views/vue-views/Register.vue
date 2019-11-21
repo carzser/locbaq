@@ -145,11 +145,11 @@ export default {
         this.enableCombo
       ) {
         var text = {
-          FirstName: this.nameInpt,
-          LastName: this.lastNameInpt,
-          Cellphone: this.cellphoneInpt,
-          Email: this.emailInpt,
-          Password: this.passwordInpt
+          'Name': this.nameInpt,
+          'LastName': this.lastNameInpt,
+          'Phone': this.cellphoneInpt,
+          'Email': this.emailInpt,
+          'Password': this.passwordInpt
         };
         console.log(text);
         this.axios

@@ -121,11 +121,7 @@ export default {
         }
     },
     created(){
-        /*if(this.$store.state.isLoged  && this.$store.state.isOwner){ 
-        }
-        else{
-            this.$router.push({ path: 'home' })
-        } */  
+        
     }
 }
 </script>

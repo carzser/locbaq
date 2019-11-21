@@ -1,9 +1,9 @@
 <template>
     <div>
-        <v-row>
-            <h3 clas="mess ml-5" id="h3m" >Hola querido {{username}}</h3>
-            <v-btn :to="myprofile" icon>
-                <v-icon x-large class="mess" >mdi-account-circle</v-icon>
+        <v-row class= "mt-5">
+            <h3 clas="mess" id="h3m" >Hola querido {{username}}</h3>
+            <v-btn :to="myprofile" icon text class ="pb-3">
+                <v-icon  large class="mess my-auto" >mdi-account-circle</v-icon>
             </v-btn>
             <v-btn 
             v-for="link in links"

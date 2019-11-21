@@ -30,27 +30,33 @@ export const store = new Vuex.Store({
         shoppingCart:[
             {
                 name: 'p1',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p2',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p3',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p4',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p5',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p6',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             }
         ]
     },

@@ -29,7 +29,12 @@ export default {
       type: String,
       default: "50%"
     }
-  }
+  },
+  data: ()=>({
+    name: 'Producto 1',
+    description:'Descripcion....',
+    price: '50000'
+  })
 };
 </script>
 
