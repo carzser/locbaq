@@ -59,17 +59,26 @@ export default {
     isValid(){
       var op = this.emailInpt.match(/\S+@\S+\.\S+/) != null && this.passwordInpt.length > 2
       if(op){
-        /*var text = JSON.stringify({
+        var text ={
           "Email":this.emailInpt,
           "Password":this.passwordInpt
+          }
+          console.log(text);
+          this.axios.post('/api/login',text).then((response) =>{
+            console.log("Se vienen los datos");
+            console.log(response.data);
           })
+           .catch(error => {
+            console.log("Llegó esto a cliente");
+            console.log(error.response);
+          });
           console.log(text)
-          */
+          
           this.enableEmail = true
           this.enablePassword = true
           this.$store.commit('changeLogState');
           this.$store.commit('setUsername',this.emailInpt)
-          console.log("el valor del boolean es"+ this.$store.state.isLoged);
+          //console.log("el valor del boolean es"+ this.$store.state.isLoged);
           this.$router.push({ path: 'home' })
           //window.location =  ('./');
       }

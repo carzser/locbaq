@@ -3139,6 +3139,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     username: String
@@ -3288,14 +3290,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'register',
+  name: "register",
   components: {},
   data: function data() {
     return {
@@ -3308,15 +3304,15 @@ __webpack_require__.r(__webpack_exports__);
       enablePassword: true,
       enablePassword2: true,
       enableCombo: true,
-      nameInpt: '',
-      lastNameInpt: '',
-      cellphoneInpt: '',
-      emailInpt: '',
-      passwordInpt: '',
-      password2Inpt: '',
-      select: '',
-      links: ['Home', 'Login', 'Register'],
-      items: ['Si', 'No']
+      nameInpt: "",
+      lastNameInpt: "",
+      cellphoneInpt: "",
+      emailInpt: "",
+      passwordInpt: "",
+      password2Inpt: "",
+      select: "",
+      links: ["Home", "Login", "Register"],
+      items: ["Si", "No"]
     };
   },
   methods: {
@@ -3354,15 +3350,22 @@ __webpack_require__.r(__webpack_exports__);
       this.validComboBox();
 
       if (this.enableName && this.enableLastName && this.enablePhone && this.enableEmail && this.enablePassword && this.enablePassword2 && this.enableCombo) {
-        /*var text = {
-            "Name" : this.nameInpt,
-            "LastName" : this.lastNameInpt,
-            "Phone" : this.PhoneInpt,
-            "Email" : this.emailInpt,
-            "Password" : this.passwordInpt
-        }
-        var obj = JSON.stringify(text);
-        */
+        var text = {
+          idUser: Math.floor(Math.random() * (10000 - 1 + 1) + 1),
+          FirstName: this.nameInpt,
+          LastName: this.lastNameInpt,
+          Email: this.emailInpt,
+          Password: this.passwordInpt,
+          Cellphone: this.cellphoneInpt
+        };
+        console.log(text);
+        this.axios.post('/api/register', text).then(function (response) {
+          console.log("Se vienen los datos");
+          console.log(response.data);
+        })["catch"](function (error) {
+          console.log("Llegó esto a cliente");
+          console.log(error.response);
+        });
       } else {
         alert("Complete los campos");
       }
@@ -3502,11 +3505,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    if (this.$store.state.isLoged && this.$store.state.isOwner) {} else {
-      this.$router.push({
-        path: 'home'
-      });
+    /*if(this.$store.state.isLoged  && this.$store.state.isOwner){ 
     }
+    else{
+        this.$router.push({ path: 'home' })
+    } */
   }
 });
 
@@ -3577,17 +3580,24 @@ __webpack_require__.r(__webpack_exports__);
       var op = this.emailInpt.match(/\S+@\S+\.\S+/) != null && this.passwordInpt.length > 2;
 
       if (op) {
-        /*var text = JSON.stringify({
-          "Email":this.emailInpt,
-          "Password":this.passwordInpt
-          })
-          console.log(text)
-          */
+        var text = {
+          "Email": this.emailInpt,
+          "Password": this.passwordInpt
+        };
+        console.log(text);
+        this.axios.post('/api/login', text).then(function (response) {
+          console.log("Se vienen los datos");
+          console.log(response.data);
+        })["catch"](function (error) {
+          console.log("Llegó esto a cliente");
+          console.log(error.response);
+        });
+        console.log(text);
         this.enableEmail = true;
         this.enablePassword = true;
         this.$store.commit('changeLogState');
-        this.$store.commit('setUsername', this.emailInpt);
-        console.log("el valor del boolean es" + this.$store.state.isLoged);
+        this.$store.commit('setUsername', this.emailInpt); //console.log("el valor del boolean es"+ this.$store.state.isLoged);
+
         this.$router.push({
           path: 'home'
         }); //window.location =  ('./');
@@ -23497,14 +23507,19 @@ var render = function() {
       _c(
         "v-row",
         [
-          _c("h3", { attrs: { clas: "mess", id: "h3m" } }, [
+          _c("h3", { attrs: { clas: "mess ml-5", id: "h3m" } }, [
             _vm._v("Hola querido " + _vm._s(_vm.username))
           ]),
           _vm._v(" "),
           _c(
-            "v-icon",
-            { staticClass: "mess", attrs: { to: _vm.myprofile, large: "" } },
-            [_vm._v("mdi-account-circle")]
+            "v-btn",
+            { attrs: { to: _vm.myprofile, icon: "" } },
+            [
+              _c("v-icon", { staticClass: "mess", attrs: { "x-large": "" } }, [
+                _vm._v("mdi-account-circle")
+              ])
+            ],
+            1
           ),
           _vm._v(" "),
           _vm._l(_vm.links, function(link) {
@@ -79105,8 +79120,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
