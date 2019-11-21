@@ -26,31 +26,38 @@ export const store = new Vuex.Store({
         isLoged: false,
         stateNavbar: 'SignIn',
         username: "",
+        token:"",
         isOwner: true,
         shoppingCart:[
             {
                 name: 'p1',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p2',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p3',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p4',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p5',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             },
             {
                 name: 'p6',
-                quantity: 1
+                quantity: 1,
+                price: 5000
             }
         ]
     },
@@ -68,6 +75,9 @@ export const store = new Vuex.Store({
         setUsername(data,name){
             console.log(name)
             data.username = name    
+        },
+        setToken(data,token){
+            data.token = token;
         },
         addItem(data,item){
             data.shoppingCart.append({name:item,quantity:1});

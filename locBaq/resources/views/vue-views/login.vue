@@ -67,20 +67,29 @@ export default {
           this.axios.post('/api/login',text).then((response) =>{
             console.log("Se vienen los datos");
             console.log(response.data);
+            if(response.data.Message=="inicio exitoso"){
+              this.$store.commit('changeLogState');
+              var strin = ""+response.data.FirstName +" "+response.data.LastName
+              this.$store.commit('setUsername',strin);
+              this.$store.commit('SetToken',this.emailInpt)
+              //console.log("el valor del boolean es"+ this.$store.state.isLoged);
+              this.$router.push({ path: 'home' })
+            }
+            else if (response.data.Message=="el usuario no existe"){
+              alert("El Usuario no existe")
+              this.enableEmail = false;
+            }
+            else{
+              alert("Contraseña incorrecta");
+              this.enablePassword = false;
+            }
           })
            .catch(error => {
             console.log("Llegó esto a cliente");
             console.log(error.response);
+            
           });
           console.log(text)
-          
-          this.enableEmail = true
-          this.enablePassword = true
-          this.$store.commit('changeLogState');
-          this.$store.commit('setUsername',this.emailInpt)
-          //console.log("el valor del boolean es"+ this.$store.state.isLoged);
-          this.$router.push({ path: 'home' })
-          //window.location =  ('./');
       }
       else{
         alert("Complete los campos")

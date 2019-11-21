@@ -248,6 +248,13 @@ export default {
             console.log(v)
             return v
         }
+    },
+    created(){
+        this.axios.post('/api/gestRest').then((response)=>{
+            console.log(response.data);
+        }).catch(error =>{
+
+        })
     }
 }
 </script>

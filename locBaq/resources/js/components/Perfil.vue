@@ -179,6 +179,11 @@ export default {
     updateData() {
       console.log("this.op:", this.op);
       if (!this.op) {
+        this.axios.post('/api/updateUser',newUser).then((response)=>{
+          console.log(response.data);
+        }).catch(error =>{
+
+        })
         this.nameInpt = this.aux.name;
         this.lastNameInpt = this.aux.lastName;
         this.cellphoneInpt = this.aux.cellphone;
@@ -187,17 +192,18 @@ export default {
     }
   },
   created() {
-    let User = {
-      name: "Fabio",
-      lastName: "Zapata",
-      email: "Fabioz@uninorte.edu.co",
-      cellphone: "3043479853"
-    };
-    this.nameInpt = User.name;
-    this.lastNameInpt = User.lastName;
-    this.emailInpt = User.email;
-    this.cellphoneInpt = User.cellphone;
-    console.log(User);
+    this.axios.post('/api/getUser',this.$store.state.token).then((response) =>{
+      console.log(response.data);
+      this.nameInpt = response.data.FirstName;
+      this.lastNameInpt = response.data.lastName;
+      this.emailInpt = response.data.Email;
+      this.cellphoneInpt = response.data.Cellphone;
+    })
+      .catch(error => {
+      console.log("Llegó esto a cliente");
+      console.log(error.response);
+      
+    });
   }
 };
 </script>

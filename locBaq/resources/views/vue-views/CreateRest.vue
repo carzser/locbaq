@@ -113,7 +113,18 @@ export default {
             this.validDescr();
             if(this.enablePhone && this.enableName && this.enableEmail && this.enableAddress
                 && this.enableUrl && this.validDescr){
+                    var info = {
+                        'name': this.nameInpt,
+                        'address': this.addressInpt,
+                        'cellphone': this.cellphoneInpt,
+                        'email': this.emailInpt,
+                        'descr':this.descrInpt
+                    }
+                     this.axios.post('/api/createRest',info).then((response)=>{
+                        console.log(response.data);
+                    }).catch(error =>{
 
+                    })
             }
             else{
                 alert('Complete los campos');
@@ -121,11 +132,7 @@ export default {
         }
     },
     created(){
-        /*if(this.$store.state.isLoged  && this.$store.state.isOwner){ 
-        }
-        else{
-            this.$router.push({ path: 'home' })
-        } */  
+        
     }
 }
 </script>
