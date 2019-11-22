@@ -18,7 +18,7 @@ class CreateRestaurantsTable extends Migration
           $table->string('Address');
           $table->string('Cellphone');
           $table->string('Email');
-          $table->string('idUser');
+          $table->string('EmailUser');
 
         });
 
