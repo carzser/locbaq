@@ -3179,7 +3179,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.axios.post('/api/getRest').then(function (response) {
       console.log(response.data);
-    })["catch"](function (error) {});
+    })["catch"](function (error) {
+      console.log(error.data);
+    });
   }
 });
 
@@ -3709,20 +3711,23 @@ __webpack_require__.r(__webpack_exports__);
       this.validName();
       this.validEmail();
       this.validAddress();
-      this.validUlr();
+      this.validUrl();
       this.validDescr();
 
       if (this.enablePhone && this.enableName && this.enableEmail && this.enableAddress && this.enableUrl && this.validDescr) {
         var info = {
-          'name': this.nameInpt,
-          'address': this.addressInpt,
-          'cellphone': this.cellphoneInpt,
-          'email': this.emailInpt,
-          'descr': this.$store.state.token
+          'Name': this.nameInpt,
+          'Address': this.addressInpt,
+          'Cellphone': this.cellphoneInpt,
+          'Email': this.emailInpt,
+          'Descr': this.descrInpt
         };
+        console.log(info);
         this.axios.post('/api/createRest', info).then(function (response) {
           console.log(response.data);
-        })["catch"](function (error) {});
+        })["catch"](function (error) {
+          console.log(error.response);
+        });
       } else {
         alert('Complete los campos');
       }
@@ -79695,8 +79700,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

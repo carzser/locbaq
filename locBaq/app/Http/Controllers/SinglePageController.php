@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
-use app\restaurant;
+use App\restaurant;
 
 class SinglePageController extends Controller
 {
@@ -85,8 +85,8 @@ class SinglePageController extends Controller
     }
 
     public function getRest(){
-      $todosRestaurantes = restaurant::get();
-      return todosRestaurantes;
+      $todosRestaurantes = restaurant::all();
+      return $todosRestaurantes;
     }
 
     public function createRest(Request $request){
@@ -104,7 +104,7 @@ class SinglePageController extends Controller
           'Address' => $request['Address'],
           'Cellphone' => $request['Cellphone'],
           'Email' => $request['Email'],
-          'EmailUser' => $request['EmailUser']
+          'Descr' => $request['Descr']
         ]);
 
         return ['Message' => 'registro exitoso'];
