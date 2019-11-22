@@ -47,7 +47,7 @@
           </v-dialog>
         </v-btn>
         <v-spacer></v-spacer>
-        <v-btn class="font-weight-bold" color="primary">Cambiar contraseña</v-btn>
+        <v-btn class="font-weight-bold" to="createrest" color="primary">Agregar un restaurante</v-btn>
       </v-card-actions>
     </v-card>
     <div class="restFav mx-10">

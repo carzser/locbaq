@@ -2009,6 +2009,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2020,6 +2021,13 @@ __webpack_require__.r(__webpack_exports__);
     return {
       colors: ['primary', 'secondary', 'yellow darken-2', 'red', 'orange']
     };
+  },
+  methods: {
+    "goto": function goto() {
+      this.$router.push({
+        path: 'lista_restaurantes'
+      });
+    }
   }
 });
 
@@ -3767,6 +3775,8 @@ __webpack_require__.r(__webpack_exports__);
       this.enableDescr = this.descrInpt.trim().length > 0;
     },
     validAll: function validAll() {
+      var _this = this;
+
       this.validPhone();
       this.validName();
       this.validEmail();
@@ -3785,6 +3795,10 @@ __webpack_require__.r(__webpack_exports__);
         console.log(info);
         this.axios.post('/api/createRest', info).then(function (response) {
           console.log(response.data);
+
+          _this.$router.push({
+            path: 'home'
+          });
         })["catch"](function (error) {
           console.log(error.response);
         });
@@ -22480,7 +22494,8 @@ var render = function() {
                   "v-btn",
                   {
                     staticClass: "d-block mb-3 font-weight-bold",
-                    attrs: { color: "rgb(229,57,53)", dark: "" }
+                    attrs: { color: "rgb(229,57,53)", dark: "" },
+                    on: { click: _vm.goto }
                   },
                   [
                     _c("v-icon", { attrs: { left: "", dark: "" } }, [
@@ -22495,7 +22510,8 @@ var render = function() {
                   "v-btn",
                   {
                     staticClass: "d-block font-weight-bold",
-                    attrs: { color: "rgb(229,57,53)", dark: "" }
+                    attrs: { color: "rgb(229,57,53)", dark: "" },
+                    on: { click: _vm.goto }
                   },
                   [_vm._v("Mirar el catalogo")]
                 )
@@ -23077,9 +23093,9 @@ var render = function() {
                 "v-btn",
                 {
                   staticClass: "font-weight-bold",
-                  attrs: { color: "primary" }
+                  attrs: { to: "createrest", color: "primary" }
                 },
-                [_vm._v("Cambiar contraseña")]
+                [_vm._v("Agregar un restaurante")]
               )
             ],
             1

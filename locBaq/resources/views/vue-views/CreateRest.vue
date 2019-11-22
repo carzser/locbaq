@@ -118,6 +118,7 @@ export default {
                     console.log(info)
                      this.axios.post('/api/createRest',info).then((response)=>{
                         console.log(response.data);
+                        this.$router.push({path: 'home'});
                     }).catch(error =>{
                         console.log(error.response);
                     })

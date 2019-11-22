@@ -22,7 +22,7 @@
             class="d-block mb-3 font-weight-bold"
             color="rgb(229,57,53)"
             dark
-            
+            @click = "goto"
           >
           <v-icon left dark>mdi-map-marker</v-icon>
           Mostrar Restaurantes cerca de ti</v-btn>
@@ -30,6 +30,7 @@
             color="rgb(229,57,53)"
             dark 
             class="d-block font-weight-bold"
+            @click = "goto"
           >Mirar el catalogo</v-btn>
           
         </div>
@@ -71,7 +72,12 @@ export default {
           'red',
           'orange',
         ],
-      }   
+      }
+    },
+    methods :{
+      goto(){
+        this.$router.push({path: 'lista_restaurantes'})
+      }
     }
 }
 </script>
