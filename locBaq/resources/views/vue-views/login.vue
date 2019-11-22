@@ -71,7 +71,7 @@ export default {
               this.$store.commit('changeLogState');
               var strin = ""+response.data.FirstName +" "+response.data.LastName
               this.$store.commit('setUsername',strin);
-              this.$store.commit('SetToken',this.emailInpt)
+              this.$store.commit('setToken',this.emailInpt)
               //console.log("el valor del boolean es"+ this.$store.state.isLoged);
               this.$router.push({ path: 'home' })
             }
