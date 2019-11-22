@@ -4,11 +4,11 @@
     <v-row dense>
         <v-col
           v-for="card in tcards"
-          :key="card.title"
-          :cols="card.flex"
+          :key="card.Name"
+          :cols="flex"
           class="mb-3"
         >
-        <Card :cardInfo = "card" />
+        <Card :cardInfo = "getCard(card.Name)" />
         </v-col>
     </v-row>
     <v-pagination
@@ -25,7 +25,7 @@ export default {
       Card
     },
     data: () => ({
-      cards: [
+      /*cards: [
         { 
             title: 'Porthos', 
             src: 'https://restaurante.guide/wp-content/uploads/2019/07/Porthos-logo.jpg',
@@ -239,8 +239,12 @@ export default {
             flex: 3,
             text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
         }
-      ],
+      ],*/
+      flex: 3,
+      src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
       page: 1,
+      text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto",
+      cards: ''
     }),
     computed:{
         tcards : function (){
@@ -249,9 +253,21 @@ export default {
             return v
         }
     },
+    methods:{
+        getCard(name){
+            var obj = {
+                title: name,
+                src : this.src,
+                flex : this.flex,
+                text: this.text
+            }
+            return obj
+        }
+    },
     created(){
         this.axios.post('/api/getRest').then((response)=>{
             console.log(response.data);
+            this.cards = response.data
         }).catch(error =>{
             console.log(error.data);
         })

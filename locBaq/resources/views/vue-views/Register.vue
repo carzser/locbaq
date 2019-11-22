@@ -158,6 +158,7 @@ export default {
           .then(response => {
             console.log("Se vienen los datos");
             console.log(response.data);
+            this.$router.push({path: 'home'})
           })
           .catch(error => {
             console.log("Llegó esto a cliente");

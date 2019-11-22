@@ -2990,183 +2990,223 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      cards: [{
-        title: 'Porthos',
-        src: 'https://restaurante.guide/wp-content/uploads/2019/07/Porthos-logo.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Mac-Donalds',
-        src: 'https://media.wired.com/photos/5c99118735d3fb65db9a333d/master/w_2560%2Cc_limit/McDonalds-TA-462767668.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Big Bites',
-        src: 'https://d1jgln4w9al398.cloudfront.net/imagens/ce/logosgde/201808011600_01da0f38-6e58-481f-9c61-f6783257e4dc.png',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Otro rest',
-        src: 'https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes2',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes3',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes4',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes5',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes6',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes7',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes8',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes9',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes10',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes11',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes12',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes13',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes14',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes15',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes16',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes17',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes18',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes19',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes20',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes21',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes22',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes23',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes24',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes25',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes26',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes27',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes28',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes29',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes30',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }, {
-        title: 'Más restaurantes31',
-        src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
-        flex: 3,
-        text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
-      }],
-      page: 1
+      /*cards: [
+        { 
+            title: 'Porthos', 
+            src: 'https://restaurante.guide/wp-content/uploads/2019/07/Porthos-logo.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Mac-Donalds', 
+            src: 'https://media.wired.com/photos/5c99118735d3fb65db9a333d/master/w_2560%2Cc_limit/McDonalds-TA-462767668.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+          },
+        {
+            title: 'Big Bites', 
+            src: 'https://d1jgln4w9al398.cloudfront.net/imagens/ce/logosgde/201808011600_01da0f38-6e58-481f-9c61-f6783257e4dc.png',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+          },
+        {
+            title: 'Otro rest', 
+            src: 'https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+          },
+        {
+            title: 'Más restaurantes', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes2', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes3', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes4', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes5', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes6', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes7', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes8', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes9', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes10', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes11', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes12', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes13', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes14', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes15', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes16', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes17', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes18', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes19', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes20', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes21', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes22', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes23', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes24', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes25', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes26', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes27', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes28', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes29', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes30', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        },
+        {
+            title: 'Más restaurantes31', 
+            src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+            flex: 3,
+            text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto"
+        }
+      ],*/
+      flex: 3,
+      src: 'https://freelogo-assets.s3.amazonaws.com/sites/all/themes/freelogoservices/images/smalllogorestaurant1.jpg',
+      page: 1,
+      text: "Hola este es un texto Hola este es un texto Hola este es un texto Hola este es un texto",
+      cards: ''
     };
   },
   computed: {
@@ -3176,9 +3216,23 @@ __webpack_require__.r(__webpack_exports__);
       return v;
     }
   },
+  methods: {
+    getCard: function getCard(name) {
+      var obj = {
+        title: name,
+        src: this.src,
+        flex: this.flex,
+        text: this.text
+      };
+      return obj;
+    }
+  },
   created: function created() {
+    var _this = this;
+
     this.axios.post('/api/getRest').then(function (response) {
       console.log(response.data);
+      _this.cards = response.data;
     })["catch"](function (error) {
       console.log(error.data);
     });
@@ -3561,6 +3615,8 @@ __webpack_require__.r(__webpack_exports__);
       this.enableCombo = !(this.select == "");
     },
     validAll: function validAll() {
+      var _this = this;
+
       this.validName();
       this.validLastName();
       this.validPhone();
@@ -3582,6 +3638,10 @@ __webpack_require__.r(__webpack_exports__);
         this.axios.post('/api/register', text).then(function (response) {
           console.log("Se vienen los datos");
           console.log(response.data);
+
+          _this.$router.push({
+            path: 'home'
+          });
         })["catch"](function (error) {
           console.log("Llegó esto a cliente");
           console.log(error.response);
@@ -23930,12 +23990,8 @@ var render = function() {
         _vm._l(_vm.tcards, function(card) {
           return _c(
             "v-col",
-            {
-              key: card.title,
-              staticClass: "mb-3",
-              attrs: { cols: card.flex }
-            },
-            [_c("Card", { attrs: { cardInfo: card } })],
+            { key: card.Name, staticClass: "mb-3", attrs: { cols: _vm.flex } },
+            [_c("Card", { attrs: { cardInfo: _vm.getCard(card.Name) } })],
             1
           )
         }),
@@ -79700,8 +79756,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
