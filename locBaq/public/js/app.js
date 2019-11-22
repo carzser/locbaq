@@ -2431,7 +2431,14 @@ __webpack_require__.r(__webpack_exports__);
     updateData: function updateData() {
       console.log("this.op:", this.op);
 
-      if (!this.op) {
+      if (this.op) {
+        var newUser = {
+          FirstName: this.nameInpt,
+          LastName: this.lastNameInpt,
+          Email: this.emailInpt,
+          Cellphone: this.cellphoneInpt
+        };
+        console.log(newUser);
         this.axios.post('/api/updateUser', newUser).then(function (response) {
           console.log(response.data);
         })["catch"](function (error) {});
@@ -2445,11 +2452,14 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.post('/api/getUser', this.$store.state.token).then(function (response) {
+    var f = {
+      Email: this.$store.state.token
+    };
+    this.axios.post('/api/getUser', f).then(function (response) {
       console.log(response.data);
       _this.nameInpt = response.data.FirstName;
       _this.lastNameInpt = response.data.LastName;
-      _this.emailInpt = response.data.Email;
+      _this.emailInpt = f.Email;
       _this.cellphoneInpt = response.data.Cellphone;
     })["catch"](function (error) {
       console.log("Llegó esto a cliente");
@@ -79703,8 +79713,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Software design\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Proyectos\locbaq\locBaq\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

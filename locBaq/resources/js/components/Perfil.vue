@@ -178,7 +178,14 @@ export default {
     },
     updateData() {
       console.log("this.op:", this.op);
-      if (!this.op) {
+      if (this.op) {
+        var newUser = {
+          FirstName : this.nameInpt,
+          LastName: this.lastNameInpt,
+          Email: this.emailInpt,
+          Cellphone: this.cellphoneInpt
+        }
+        console.log(newUser);
         this.axios.post('/api/updateUser',newUser).then((response)=>{
           console.log(response.data);
         }).catch(error =>{
@@ -192,11 +199,14 @@ export default {
     }
   },
   created() {
-    this.axios.post('/api/getUser',this.$store.state.token).then((response) =>{
+    var f = {
+      Email: this.$store.state.token
+    }
+    this.axios.post('/api/getUser',f).then((response) =>{
       console.log(response.data);
       this.nameInpt = response.data.FirstName;
       this.lastNameInpt = response.data.LastName;
-      this.emailInpt = response.data.Email;
+      this.emailInpt = f.Email;
       this.cellphoneInpt = response.data.Cellphone;
     })
       .catch(error => {

@@ -78,6 +78,8 @@ class SinglePageController extends Controller
       $userdata->LastName = $request['LastName'];
       $userdata->Cellphone = $request['Cellphone'];
 
+      $userdata->save();
+
       return ['Message' => 'datos actualizados'];
 
     }
