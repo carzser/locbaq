@@ -35,11 +35,6 @@
                             v-on:input = "validEmail"
                             :error = "!enableEmail"
                             />
-                        <v-file-input 
-                            v-model.trim="urlImgInpt"
-                            v-on:input = "validUrl"
-                            :error = "!enableUrl"
-                            label="Imagen"></v-file-input>
                         <v-textarea
                             append-icon="mdi-card-text"
                             outlined
@@ -96,10 +91,10 @@ export default {
             this.enableEmail=  this.emailInpt.match(/\S+@\S+\.\S+/) != null   
         },
         validAddress(){
-            this.enableAddress = this.addressInpt.trim>2;
+            this.enableAddress = true
         },
-        validUlr(){
-            this.enableUrl =  (this.urlImgInpt.match(/\.(jpeg|jpg|gif|png)$/) != null);
+        validUrl(){
+            this.enableUrl = true
         },
         validDescr(){
             this.enableDescr =  (this.descrInpt.trim().length > 0)
@@ -118,7 +113,7 @@ export default {
                         'address': this.addressInpt,
                         'cellphone': this.cellphoneInpt,
                         'email': this.emailInpt,
-                        'descr':this.descrInpt
+                        'descr':this.$store.state.token
                     }
                      this.axios.post('/api/createRest',info).then((response)=>{
                         console.log(response.data);

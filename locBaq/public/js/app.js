@@ -3655,11 +3655,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3691,10 +3686,10 @@ __webpack_require__.r(__webpack_exports__);
       this.enableEmail = this.emailInpt.match(/\S+@\S+\.\S+/) != null;
     },
     validAddress: function validAddress() {
-      this.enableAddress = this.addressInpt.trim > 2;
+      this.enableAddress = true;
     },
-    validUlr: function validUlr() {
-      this.enableUrl = this.urlImgInpt.match(/\.(jpeg|jpg|gif|png)$/) != null;
+    validUrl: function validUrl() {
+      this.enableUrl = true;
     },
     validDescr: function validDescr() {
       this.enableDescr = this.descrInpt.trim().length > 0;
@@ -3713,7 +3708,7 @@ __webpack_require__.r(__webpack_exports__);
           'address': this.addressInpt,
           'cellphone': this.cellphoneInpt,
           'email': this.emailInpt,
-          'descr': this.descrInpt
+          'descr': this.$store.state.token
         };
         this.axios.post('/api/createRest', info).then(function (response) {
           console.log(response.data);
@@ -24482,19 +24477,6 @@ var render = function() {
                               typeof $$v === "string" ? $$v.trim() : $$v
                           },
                           expression: "emailInpt"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-file-input", {
-                        attrs: { error: !_vm.enableUrl, label: "Imagen" },
-                        on: { input: _vm.validUrl },
-                        model: {
-                          value: _vm.urlImgInpt,
-                          callback: function($$v) {
-                            _vm.urlImgInpt =
-                              typeof $$v === "string" ? $$v.trim() : $$v
-                          },
-                          expression: "urlImgInpt"
                         }
                       }),
                       _vm._v(" "),
